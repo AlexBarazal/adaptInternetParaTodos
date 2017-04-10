@@ -4,23 +4,32 @@
                 Menu <i class="fa fa-bars"></i>
             </button>
             <div class="container">
-                <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-asl-interpreting fa-flip-horizontal"></i>&nbsp<i class="fa fa-blind fa-flip-horizontal"></i>&nbsp<i class="fa fa-deaf fa-flip-horizontal"></i>&nbsp &nbspAdapt</a>
+                <a class="navbar-brand page-scroll" href="index.php#page-top"><i class="fa fa-asl-interpreting fa-flip-horizontal"></i>&nbsp<i class="fa fa-blind fa-flip-horizontal"></i>&nbsp<i class="fa fa-deaf fa-flip-horizontal"></i>&nbsp &nbspAdapt</a>
                 <div class="collapse navbar-collapse" id="navbarExample">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#portfolio">Cliente</a>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">CLIENTE <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
+                              <li><a href="areaCliente.php">Aréa Cliente</a></li>
+                            </ul>
+                        </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#portfolio">Portfólio</a>
+                            <a class="nav-link page-scroll" href="index.php#portfolio">Portfólio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#about">Informações</a>
+                            <a class="nav-link page-scroll" href="noticias.php">Notícias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#contact">Contato</a>
+                            <a class="nav-link page-scroll" href="index.php#about">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#contact">Sobre</a>
+                            <a class="nav-link page-scroll" href="index.php#contact">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="login.php">Entrar</a>
                         </li>
                     </ul>
                 </div>
