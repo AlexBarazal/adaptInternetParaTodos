@@ -24,7 +24,7 @@
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form name="cadastroVisitante" id="visitanteForm" action="submit" method="_GET" novalidate>
+                        <form name="cadastroVisitante" id="visitanteForm" action="" method="post">
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>
@@ -82,7 +82,7 @@
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Consultar</button>
+                                    <button type="reset" class="btn btn-success btn-lg">Limpar</button>
                                     <button type="submit" class="btn btn-success btn-lg">Alterar</button>
                                     <button type="submit" class="btn btn-success btn-lg">Excluir</button>
                                 </div>
@@ -94,16 +94,16 @@
         </section>
         <?php
          //Validando os Dados
-                    require('conexao.php');
+                    include_once "conexao.php";
 
-                    $nmVisitante = $_POST['nmVisitante'];
-                    $emailVisitante = $_POST['emailVisitante'];
-                    $senhaVisitante = $_POST['senhaVisitante'];
-                    $celularVisitante = $_POST['celularVisitante'];
-                    $dtNascimentoVisitante = $_POST['dtNascimentoVisitante'];
-                    $tipoDeficienciaVisitante = $_POST['tipoDeficienciaVisitante'];
+                    $nmVisitante = $_POST['nome'];
+                    $emailVisitante = $_POST['email'];
+                    $senhaVisitante = $_POST['senha'];
+                    $celularVisitante = $_POST['celular'];
+                    $dtNascimentoVisitante = $_POST['dataNascimento'];
+                    $tipoDeficienciaVisitante = $_POST['tipoDeficiencia'];
 
-                    $sql = "INSERT INTO visitante.adapt (nmVisitante,emailVisitante, senhaVisitante, celularVisitante, dtNascimentoVisitante, tipoDeficienciaVisitante) VALUES ($nmVisitante, $emailVisitante, $senhaVisitante, $celularVisitante, $dtNascimentoVisitante, $tipoDeficienciaVisitante)";
+                    $sql = "INSERT INTO visitante (nmVisitante,emailVisitante, senhaVisitante, celularVisitante, dtNascimentoVisitante, tipoDeficienciaVisitante) VALUES ('$nmVisitante', '$emailVisitante', '$senhaVisitante', '$celularVisitante', '$dtNascimentoVisitante', '$tipoDeficienciaVisitante')";
 
                     if ($conn->query($sql) === TRUE) {
                           echo "Novo registro criado com sucesso";
