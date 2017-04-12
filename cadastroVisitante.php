@@ -12,42 +12,7 @@
 
     <?php include_once "navegacao.php" ?>
 
-    <?php
-         //Validando os Dados
-         if(isset($_POST["nmVisitante"]) && isset($_POST["emailVisitante"]) && isset($_POST["senhaVisitante"]) && isset($_POST["celularVisitante"]) && isset($_POST["dtNascimentoVisitante"]) && isset($_POST["tipoDeficienciaVisitante"]))
-                {
-                    //Cadastro ou Alteração dos Dados
-                     $obj_mysqli = new mysqli("127.0.0.1","root","","adapt");
-                     if ($obj_mysqli->connect_errno){
-                            echo "Ocorreu um erro com a conexão com o banco de dados.";
-                         }
-                     mysqli_set_charset($obj_mysqli, 'utf8');
-
-                    $nmAdm = $_POST["nmAdm"];
-                    $emailAdm = $_POST["emailAdm"];
-                    $senhaAdm = $_POST["senhaAdm"];
-                    $celularAdm = $_POST["celularAdm"];
-                    $dtNascimentoAdm = $_POST["dtNascimentoAdm"];
-                    $sexoAdm = $_POST["sexoAdm"];
-                    $cpfAdm= $_["cpfAdm"];
-                    $rgAdm = $_["rgAdm"];
-
-                    $stmt = $obj_mysqli->prepare("INSERT INTO administrador('nmAdm','emailAdm','senhaAdm','celularAdm','dtNascimentoAdm','sexoAdm','cpfAdm','rgAdm')VALUES(?,?,?,?,?,?,?,?)");
-                    $stmt->blind_param('ssssssss', $nmAdm, $emailAdm, $senhaAdm, $celularAdm, $dtNascimentoAdm, $sexoAdm, $cpfAdm, $rgAdm);
-
-                    if(!$stmt->execute())
-                        {
-                            echo  $stmt->error;
-                        }
-                    else
-                        {
-                            echo "Dados cadastrados com sucesso!";
-                        }
-
-                }
-
-            }
-         ?>
+    
 
      <!-- Contact Section -->
         <section id="contact">
@@ -59,7 +24,7 @@
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form name="cadastroVisitante" id="visitanteForm" novalidate>
+                        <form name="cadastroVisitante" id="visitanteForm" action="submit" method="_GET" novalidate>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>
@@ -127,7 +92,27 @@
                 </div>
             </div>
         </section>
+        <?php
+         //Validando os Dados
+                    require('conexao.php');
 
+                    $nmVisitante = $_POST['nmVisitante'];
+                    $emailVisitante = $_POST['emailVisitante'];
+                    $senhaVisitante = $_POST['senhaVisitante'];
+                    $celularVisitante = $_POST['celularVisitante'];
+                    $dtNascimentoVisitante = $_POST['dtNascimentoVisitante'];
+                    $tipoDeficienciaVisitante = $_POST['tipoDeficienciaVisitante'];
+
+                    $sql = "INSERT INTO visitante.adapt (nmVisitante,emailVisitante, senhaVisitante, celularVisitante, dtNascimentoVisitante, tipoDeficienciaVisitante) VALUES ($nmVisitante, $emailVisitante, $senhaVisitante, $celularVisitante, $dtNascimentoVisitante, $tipoDeficienciaVisitante)";
+
+                    if ($conn->query($sql) === TRUE) {
+                          echo "Novo registro criado com sucesso";
+                    } else {
+                          echo "Error: " . $sql . "<br>" . $conn->error;
+                          }
+
+                    $conn->close();
+    ?>
         <?php include_once "rodape.php" ?>
     </body>
 </html>
