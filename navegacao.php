@@ -9,10 +9,21 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">CLIENTE <span class="caret"></span></button>
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">CADASTRAR <span class="caret"></span></button>
                             <ul class="dropdown-menu">
+                              <li><a href="cadastroAdm.php">Cadastro Administrador</a></li>
                               <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
+                              <li><a href="cadastroVisitante.php">Cadastro Visitante</a></li>              
                               <li><a href="areaCliente.php">Aréa Cliente</a></li>
+                            </ul>
+                        </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">AREA DO CLIENTE <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <li><a href="cadastroPastaArquivo.php">Cadastrar Conteúdo</a></li>
+                              <li><a href="conteudoCliente.php">Meus Conteúdos</a></li>
                             </ul>
                         </div>
                         </li>
