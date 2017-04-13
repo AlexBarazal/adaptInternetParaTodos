@@ -9,53 +9,6 @@
 </head>
 
     <body id="page-top" class="index">
-    <?php
-         //Validando os Dados
-         if(isset($_POST["nmAdm"]) && isset($_POST["emailAdm"]) && isset($_POST["senhaAdm"]) && isset($_POST["celularAdm"]) && isset($_POST["dtNascimentoAdm"]) && isset($_POST["sexoAdm"]) && isset($_POST["cpfAdm"]) && isset($_POST["rgAdm"]))
-            {
-                if(empty($_POST["nmAdm"]))
-                    $erro = "Campo Obrigátorio";
-                else
-                if(empty($_POST["emailAdm"]))
-                    $erro = "Campo Obrigátorio";
-                else
-                if(empty($_POST["senhaAdm"]))
-                    $erro = "Campo Obrigátorio";
-                
-                else
-                {
-                    //Cadastro ou Alteração dos Dados
-                     $obj_mysqli = new mysqli("127.0.0.1","root","","adapt");
-                     if ($obj_mysqli->connect_errno){
-                            echo "Ocorreu um erro com a conexão com o banco de dados.";
-                         }
-                     mysqli_set_charset($obj_mysqli, 'utf8');
-
-                    $nmAdm = $_POST["nmAdm"];
-                    $emailAdm = $_POST["emailAdm"];
-                    $senhaAdm = $_POST["senhaAdm"];
-                    $celularAdm = $_POST["celularAdm"];
-                    $dtNascimentoAdm = $_POST["dtNascimentoAdm"];
-                    $sexoAdm = $_POST["sexoAdm"];
-                    $cpfAdm= $_["cpfAdm"];
-                    $rgAdm = $_["rgAdm"];
-
-                    $stmt = $obj_mysqli->prepare("INSERT INTO administrador('nmAdm','emailAdm','senhaAdm','celularAdm','dtNascimentoAdm','sexoAdm','cpfAdm','rgAdm')VALUES(?,?,?,?,?,?,?,?)");
-                    $stmt->blind_param('ssssssss', $nmAdm, $emailAdm, $senhaAdm, $celularAdm, $dtNascimentoAdm, $sexoAdm, $cpfAdm, $rgAdm);
-
-                    if(!$stmt->execute())
-                        {
-                            echo  $stmt->error;
-                        }
-                    else
-                        {
-                            echo "Dados cadastrados com sucesso!";
-                        }
-
-                }
-
-            }
-         ?>
 
        <?php include_once "navegacao.php" ?>
 
@@ -69,7 +22,7 @@
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form action="<?=$SERVER["PHP_SELF"]?> name="cadastroAdm" id="admForm" method="POST" novalidate>
+                        <form action="" name="cadastroAdm" id="admForm" method="post" novalidate>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>
@@ -138,7 +91,7 @@
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Consultar</button>
+                                    <button type="submit" class="btn btn-success btn-lg">Limpar</button>
                                     <button type="submit" class="btn btn-success btn-lg">Alterar</button>
                                     <button type="submit" class="btn btn-success btn-lg">Excluir</button>
                                 </div>
@@ -148,7 +101,33 @@
                 </div>
             </div>
         </section>
+        <?php
+         //Validando os Dados
+            if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['celular']))
+                    {
+                    include_once "conexao.php";
 
+                    $nmAdm = $_POST["nome"];
+                    $emailAdm = $_POST["email"];
+                    $senhaAdm = $_POST["senha"];
+                    $celularAdm = $_POST["celular"];
+                    $dtNascimentoAdm = $_POST["dataNascimento"];
+                    $sexoAdm = $_POST["sexo"];
+                    $cpfAdm= $_POST["cpf"];
+                    $rgAdm = $_POST["rg"];
+
+
+                    $sql = "INSERT INTO administrador (nmAdm, emailAdm, senhaAdm, celularAdm, dtNascimentoAdm, sexoAdm, cpfAdm, rgAdm) VALUES ('$nmAdm', '$emailAdm', '$senhaAdm', '$celularAdm', '$dtNascimentoAdm', '$sexoAdm', '$cpfAdm', '$rgAdm')";
+
+                    if ($conn->query($sql) === TRUE) {
+                          echo "Novo registro criado com sucesso";
+                    } else {
+                          echo "Error: " . $sql . "<br>" . $conn->error;
+                          }
+
+                    $conn->close();
+                }
+    ?>
         
         <?php include_once "rodape.php" ?>
     </body>

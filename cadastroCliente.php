@@ -12,60 +12,6 @@
 
        <?php include_once "navegacao.php" ?>
 
-    <?php
-         //Validando os Dados
-         if(isset($_POST["nnCliente"]) && isset($_POST["emailCliente"]) && isset($_POST["senhaCliente"]) && isset($_POST["celularCliente"]) && isset($_POST["sexoCliente"]) && isset($_POST["cpf_cnpjCliente"]) && isset($_POST["lagradouroCliente"]) && isset($_POST["numeroCliente"]) && isset($_POST["complementoCliente"]) && isset($_POST["bairroCliente"]) && isset($_POST["cidadeCliente"]) && isset($_POST["estadoCliente"]))
-            {
-                if(empty($_POST["nmAdm"]))
-                    $erro = "Campo Obrigátorio";
-                else
-                if(empty($_POST["emailAdm"]))
-                    $erro = "Campo Obrigátorio";
-                else
-                if(empty($_POST["senhaAdm"]))
-                    $erro = "Campo Obrigátorio";
-                
-                else
-                {
-                    //Cadastro ou Alteração dos Dados
-                     $obj_mysqli = new mysqli("127.0.0.1","root","","adapt");
-                     if ($obj_mysqli->connect_errno){
-                            echo "Ocorreu um erro com a conexão com o banco de dados.";
-                         }
-                     mysqli_set_charset($obj_mysqli, 'utf8');
-
-                    $nmCliente = $_POST["nmCliente"];
-                    $emailCliente = $_POST["emailCliente"];
-                    $senhaCliente = $_POST["senhaCliente"];
-                    $celularCliente = $_POST["celularCliente"];
-                    $sexoCliente = $_POST["sexoCliente"];
-                    $cpf_cnpjCliente= $_POST["cpf_cnpjCliente"];
-                    $lagradouroCliente = $_POST["lagradouroCliente"];
-                    $numeroCliente = $_POST["numeroCliente"];
-                    $complementoCliente = $_POST["complementoCliente"];
-                    $bairroCliente = $_POST["bairroCliente"];
-                    $cidadeCliente = $_POST["cidadeCliente"];
-                    $estadoCliente = $_POST["estadoCliente"];
-                    
-
-                    $stmt = $obj_mysqli->prepare("INSERT INTO cliente('nmCliente','emailCliente','senhaCliente','celularCliente',sexoCliente','cpf_cnpjCliente','lagradouroCliente', 'numeroCliente', 'complementoCliente,'bairroCliente', 'cidadeCliente', 'cidadeCliente')VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
-                    $stmt->blind_param('ssssssssssss', $nmCliente, $emailCliente, $senhaCliente, $celularCliente,  $sexoCliente, $cpf_cnpjCliente, $lagradouroCliente, $numeroCliente, $complementoCliente, $bairroCliente, $cidadeCliente, $estadoCliente);
-
-                    if(!$stmt->execute())
-                        {
-                            echo  $stmt->error;
-                        }
-                    else
-                        {
-                            echo "Dados cadastrados com sucesso!";
-                        }
-
-                }
-
-            }
-         ?>
-
-
      <!-- Contact Section -->
         <section id="contact">
             <div class="container">
@@ -76,7 +22,7 @@
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form name="cadastroCliente" id="clienteForm" novalidate>
+                        <form action="" method="post" name="cadastroCliente" id="clienteForm" novalidate>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>
@@ -118,15 +64,6 @@
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>
                                     <input type="number" name="celular" class="form-control" placeholder="Celular" id="celularCliente">
-                                </div>
-                            </div>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 ">
-                                    <h3>Sexo</h3>
-                                    <select name="sexo" class="form-control" placeholder="Sexo" id="sexoCliente">
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Feminino">Feminino</option>
-                                    </select>
                                 </div>
                             </div>
                             <div class="row control-group">
@@ -198,7 +135,37 @@
                 </div>
             </div>
         </section>
+        <?php
+         //Validando os Dados
+         
 
+            if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['cpf']))     {
+                    //Cadastro ou Alteração dos Dados
+                    include_once "conexao.php";
+
+                    $nmCliente = $_POST["nome"];
+                    $emailCliente = $_POST["email"];
+                    $senhaCliente = $_POST["senha"];
+                    $celularCliente = $_POST["celular"];
+                    $cpf_cnpjCliente= $_POST["cpf"];
+                    $lagradouroCliente = $_POST["lagradouro"];
+                    $numeroCliente = $_POST["numero"];
+                    $complementoCliente = $_POST["complemento"];
+                    $bairroCliente = $_POST["bairro"];
+                    $cidadeCliente = $_POST["cidade"];
+                    $estadoCliente = $_POST["estado"];
+
+                    $sql = "INSERT INTO cliente (nmCliente, emailCliente, senhaCliente, celularCliente, cpf_cnpjCliente, lagradouroCliente, numeroCliente, complementoCliente, bairroCliente, cidadeCliente, estadoCliente) VALUES ('$nmCliente', '$emailCliente', '$senhaCliente', '$celularCliente', '$cpf_cnpjCliente', '$lagradouroCliente', '$numeroCliente', '$complementoCliente', '$bairroCliente', '$cidadeCliente', '$estadoCliente')";
+
+                    if ($conn->query($sql) === TRUE) {
+                          echo "Novo registro criado com sucesso";
+                    } else {
+                          echo "Error: " . $sql . "<br>" . $conn->error;
+                          }
+
+                    $conn->close();
+                }
+    ?>
         <?php include_once "rodape.php" ?>
     </body>
 </html>

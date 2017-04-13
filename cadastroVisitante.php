@@ -94,6 +94,8 @@
         </section>
         <?php
          //Validando os Dados
+                    if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']))
+                    {
                     include_once "conexao.php";
 
                     $nmVisitante = $_POST['nome'];
