@@ -11,10 +11,9 @@
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">CADASTRAR <span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                              <li><a href="cadastroAdm.php">Cadastro Administrador</a></li>
-                              <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
-                              <li><a href="cadastroVisitante.php">Cadastro Visitante</a></li>              
-                              <li><a href="areaCliente.php">Aréa Cliente</a></li>
+                              <li><a href="cadastroAdm.php">Administrador</a></li>
+                              <li><a href="cadastroCliente.php">Cliente</a></li>
+                              <li><a href="cadastroVisitante.php">Visitante</a></li>              
                             </ul>
                         </div>
                         </li>

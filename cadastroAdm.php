@@ -5,7 +5,7 @@
     
     <!--Navigation-->
     <?php include_once "cabecalho.php" ?>
-
+    
 </head>
 
     <body id="page-top" class="index">
@@ -54,7 +54,7 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>
-                                    <input type="number" name="celular" class="form-control" placeholder="Celular" id="celularAdm" required data-validation-required-message="Por Favor insira seu celular">
+                                    <input type="number" name="celular" data-mask="(00) 0000-0000" data-mask-selectonfocus="true" class="form-control" placeholder="Celular" id="celularAdm" required data-validation-required-message="Por Favor insira seu celular">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -128,8 +128,8 @@
                     $conn->close();
                 }
     ?>
-        
         <?php include_once "rodape.php" ?>
+        
     </body>
 </html>
 

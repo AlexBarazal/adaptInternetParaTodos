@@ -6,7 +6,7 @@ senhaAdm varchar(50)not null,
 celularAdm int not null,
 dtNascimentoAdm date,
 sexoAdm char(2),
-cpf_cnpjAdm int,
+cpfAdm int,
 rgAdm int)
 
 create table visitante
