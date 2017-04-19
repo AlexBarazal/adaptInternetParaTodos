@@ -21,8 +21,10 @@
                             <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">AREA DO CLIENTE <span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                              <li><a href="cadastroPastaArquivo.php">Cadastrar Conteúdo</a></li>
-                              <li><a href="conteudoCliente.php">Meus Conteúdos</a></li>
+                              <li><a href="cadastroPastaArquivo.php">Adicionar Pasta</a></li>
+                              <li><a href="cadastroConteudo.php">Adicionar Conteúdo</a></li>
+                              <li><a href="cadastroDescricaoConteudo.php">Adicionar Descrição Conteúdo</a></li>
+                              <li><a href="conteudoCliente.php">Meus Arquivos</a></li>
                             </ul>
                         </div>
                         </li>

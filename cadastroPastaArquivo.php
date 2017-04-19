@@ -17,7 +17,7 @@
         <section id="contact">
             <div class="container">
                 <br>
-                <h2 class="text-center">Cadastro da Pasta de Arquivos</h2>
+                <h2 class="text-center">Adicionar Pasta de Arquivos</h2>
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
@@ -28,22 +28,19 @@
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nomeProdutor">Nome Cliente</label>
                                     <!-- Este campo vai pegar o nome do cliente logado-->
-                                    <input type="text" name="nomeCliente" class="form-control" placeholder="Nome Cliente" id="nomeClientePastaArquivo" maxlength="100"  required data-validation-required-message="Por Favor insira seu nome">
-                                    <p class="help-block text-danger"></p>
+                                    <input type="text" name="nomeCliente" class="form-control" placeholder="Nome Cliente" id="nomeClientePastaArquivo" maxlength="100">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nomePasta">Nome da Pasta</label>
-                                    <input type="text" name="nomePasta" class="form-control" placeholder="Nome da Pasta" id="nomePastaArquivo" maxlength="80"  required data-validation-required-message="Por Favor insira seu nome">
-                                    <p class="help-block text-danger"></p>
+                                    <input type="text" name="nomePasta" class="form-control" placeholder="Nome da Pasta" id="nomePastaArquivo" maxlength="80">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="url">Link da Pasta</label>
-                                    <input type="text" name="url" class="form-control" placeholder="Link da Pasta" id="urlPastaArquivo" maxlength="200"  required data-validation-required-message="Por Favor insira seu nome">
-                                    <p class="help-block text-danger"></p>
+                                    <input type="text" name="url" class="form-control" placeholder="Link" id="urlPastaArquivo" maxlength="200">
                                 </div>
                             </div>
                             <div class="row control-group">
@@ -55,18 +52,7 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="formato">Formato do Arquivo(ex: .mp4, .pdf)</label>
-                                    <input type="text" name="formato" class="form-control" placeholder="Formato do Arquivo" id="formatoPastaArquivo">
-                                </div>
-                            </div>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="conteudo">Conteudo</label>
-                                     <div id="success"></div>
-                                    <div class="row">
-                                        <div class="form-group col-xs-12">
-                                            <button type="submit" class="btn btn-success btn-lg">Adicionar Conteúdo</button>
-                                        </div>
-                                    </div>
+                                    <input type="text" name="formato" class="form-control" placeholder="Formato" id="formatoPastaArquivo">
                                 </div>
                             </div>
                             <br>
@@ -84,6 +70,36 @@
                 </div>
             </div>
         </section>
+        <?php
+         //Validando os Dados
+            if(isset($_POST['nomePastaArquivo']) && isset($_POST['urlPastaArquivo']) && isset($_POST['tamanhoPastaArquivo']) && isset($_POST['formatoPastaArquivo']))
+                    {
+                    include_once "conexao.php";
+
+                    //$idCliente = (Buscar id usuario logado);
+                    $nmPastaArquivo = $_POST["nomePasta"];
+                    $urlPastaArquivo = $_POST["url"];
+                    $tamanhoPastaArquivo = $_POST["tamanho"];
+                    $formatoPastaArquivo = $_POST["formato"];
+                    
+                    if(empty($_POST["nomePasta"]))
+                        echo "<script>alert('Campo nome da Pasta Obrigatório!');</script>";
+                    else
+                    if(empty($_POST["url"]))
+                        echo "<script>alert('Campo url da pasta Obrigatório!');</script>";
+                    else{
+
+                    $sql = "INSERT INTO pastaarquivo (nmPastaArquivo, urlPastaArquivo, tamanhoPastaArquivo, formatoPastaArquivo, idCliente) VALUES ('$nmPastaArquivo', '$urlPastaArquivo', '$tamanhoPastaArquivo', '$formatoPastaArquivo', '$idCliente')";
+
+                    if ($conn->query($sql) === TRUE) {
+                          echo "<script>alert('Cadastro efetuado com sucesso!');</script>";;
+                    } else {
+                          echo "Error: " . $sql . "<br>" . $conn->error;
+                          }
+                    }
+                    $conn->close();
+                }
+    ?>
 
         <?php include_once "rodape.php" ?>
     </body>

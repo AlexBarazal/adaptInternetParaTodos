@@ -10,19 +10,8 @@
 		// Check connection
 		if (!$conn) {
 		    die("Connection failed: " . mysqli_connect_error());
-		}else{
+		}
+		/*else{
 			echo "Conectado com successo <br><br>";
-		}
-
-		/*
-		$sql = "INSERT INTO visitante (nmVisitante,emailVisitante, senhaVisitante, celularVisitante, dtNascimentoVisitante, tipoDeficienciaVisitante) VALUES ('alex', 'alexbarazal@gmail.com', '123456', '13974073243', '11091986', 'nenhuma' )";
-
-		if ($conn->query($sql) === TRUE) {
-  			  echo "Novo registro criado com sucesso";
-		} else {
-    		  echo "Error: " . $sql . "<br>" . $conn->error;
-		}
-
-		$conn->close();*/
-	
+		}*/
  ?>

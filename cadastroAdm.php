@@ -26,36 +26,31 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>
-                                    <input type="text" name="nome" class="form-control" placeholder="Nome" id="nmAdm" maxlength="100"  required data-validation-required-message="Por Favor insira seu nome">
-                                    <p class="help-block text-danger"></p>
+                                    <input type="text" name="nome" class="form-control" placeholder="Nome" id="nmAdm" maxlength="100">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="email">E-mail</label>
-                                    <input type="email" name="email" class="form-control" placeholder="E-mail" id="emailAdm" required data-validation-required-message="Por Favor insira seu email">
-                                    <p class="help-block text-danger"></p>
+                                    <input type="email" name="email" class="form-control" placeholder="E-mail" id="emailAdm">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="senha">Senha</label>
-                                    <input type="password" name="senha" class="form-control" placeholder="Senha" id="senhaAdm" required data-validation-required-message="Por Favor insira sua senha">
-                                    <p class="help-block text-danger"></p>
+                                    <input type="password" name="senha" class="form-control" placeholder="Senha" id="senhaAdm">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="senhaC">Confirme a Senha</label>
-                                    <input type="password" name="senhaC" class="form-control" placeholder="Confirme a Senha" id="senhaAdmC" required data-validation-required-message="Por Favor insira sua Senha">
-                                    <p class="help-block text-danger"></p>
+                                    <input type="password" name="senhaC" class="form-control" placeholder="Confirme a Senha" id="senhaAdmC">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>
-                                    <input type="number" name="celular" data-mask="(00) 0000-0000" data-mask-selectonfocus="true" class="form-control" placeholder="Celular" id="celularAdm" required data-validation-required-message="Por Favor insira seu celular">
-                                    <p class="help-block text-danger"></p>
+                                    <input type="number" name="celular" data-mask="(00) 0000-0000" data-mask-selectonfocus="true" class="form-control" placeholder="Celular" id="celularAdm">
                                 </div>
                             </div>
                             <div class="row control-group">
@@ -115,16 +110,27 @@
                     $sexoAdm = $_POST["sexo"];
                     $cpfAdm= $_POST["cpf"];
                     $rgAdm = $_POST["rg"];
-
+                    if(empty($_POST["nome"]))
+                        echo "<script>alert('Campo nome Obrigatório!');</script>";
+                    else
+                    if(empty($_POST["email"]))
+                        echo "<script>alert('Campo email Obrigatório!');</script>";
+                    else
+                    if(empty($_POST["senha"]))
+                        echo "<script>alert('Campo senha Obrigatório!');</script>";  
+                    else
+                    if(empty($_POST["celular"]))
+                        echo "<script>alert('Campo celular Obrigatório!');</script>";
+                    else{
 
                     $sql = "INSERT INTO administrador (nmAdm, emailAdm, senhaAdm, celularAdm, dtNascimentoAdm, sexoAdm, cpfAdm, rgAdm) VALUES ('$nmAdm', '$emailAdm', '$senhaAdm', '$celularAdm', '$dtNascimentoAdm', '$sexoAdm', '$cpfAdm', '$rgAdm')";
 
                     if ($conn->query($sql) === TRUE) {
-                          echo "Novo registro criado com sucesso";
+                          echo "<script>alert('Cadastro efetuado com sucesso!');</script>";;
                     } else {
                           echo "Error: " . $sql . "<br>" . $conn->error;
                           }
-
+                    }
                     $conn->close();
                 }
     ?>

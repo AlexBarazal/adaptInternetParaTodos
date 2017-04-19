@@ -1,4 +1,4 @@
-<!DOCTYPE html><?php session_start ();?>
+<!DOCTYPE html>i
 <html lang="pt-br">
 
 <head>
