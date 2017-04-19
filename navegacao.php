@@ -38,9 +38,18 @@
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="index.php#contact">Contato</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="login.php">Entrar</a>
-                        </li>
+                            <?php
+                                    if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
+                                        {
+                                        unset($_SESSION['email']);
+                                        unset($_SESSION['senha']);
+                                        
+                                        
+
+                                    echo "<li class='nav-item'><a href='login.php' class='nav-link page-scroll'>Entrar</a></li>";
+                                    }else{
+                                    echo "<li class='nav-item'><a href='logout.php' class='nav-link page-scroll'>Sair</a></li>";
+                           } ?>
                     </ul>
                 </div>
             </div>
