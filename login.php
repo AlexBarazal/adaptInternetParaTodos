@@ -44,7 +44,7 @@
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <button type="submit" name="login" value="Login" class="btn btn-success btn-lg">Entrar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Esquecia Senha</button>
+                                    <button type="submit" class="btn btn-success btn-lg">Esqueci a Senha</button>
                                 </div>
                             </div>
                         </form>

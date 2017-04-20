@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    
+
     <!--Navigation-->
     <?php include_once "cabecalho.php" ?>
 
