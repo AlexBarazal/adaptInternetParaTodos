@@ -46,7 +46,10 @@ if($check_user>0){
 
 else {
 
-    echo "<script>alert('Email or password is not correct, try again!')</script>";
+    echo "<script>
+            alert('Email or password is not correct, try again!')
+            window.open('login.php','_self')
+          </script>";
 
 }
 

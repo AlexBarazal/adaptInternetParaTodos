@@ -24,7 +24,8 @@
                               <li><a href="cadastroPastaArquivo.php">Adicionar Pasta</a></li>
                               <li><a href="cadastroConteudo.php">Adicionar Conteúdo</a></li>
                               <li><a href="cadastroDescricaoConteudo.php">Adicionar Descrição Conteúdo</a></li>
-                              <li><a href="alteraAdm.php">Alterar/Excluir</a></li>
+                              <li><a href="alterarAdm.php">Alterar/Excluir</a></li>
+                              <li><a href="consultaAdm.php">Consultar</a></li>
                               <li><a href="conteudoCliente.php">Meus Arquivos</a></li>
                             </ul>
                         </div>
@@ -51,7 +52,7 @@
 
                                     echo "<li class='nav-item'><a href='login.php' class='nav-link page-scroll'>Entrar</a></li>";
                                     }else{
-                                    echo "<li class='nav-item'><a href='logout.php' class='nav-link page-scroll'>Sair</a></li>";
+                                    echo "<li class='nav-item'><a href='' class='nav-link page-scroll'>".$_SESSION['nome']."</a></li><li><a href='logout.php' >Sair</a></li>";
                            } ?>
                     </ul>
                 </div>
