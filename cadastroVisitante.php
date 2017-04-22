@@ -46,13 +46,13 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="row control-group">
+                            <!--div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="senhaC">Confirme a Senha</label>
                                     <input type="password" name="senhaC" class="form-control" placeholder="Confirme a Senha" id="senhaVisitanteC" required data-validation-required-message="Por Favor insira sua Senha">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                            </div>
+                            </div-->
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>
@@ -97,7 +97,6 @@
                     if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']))
                     {
                     include_once "conexao.php";
-
                     $nmVisitante = $_POST['nome'];
                     $emailVisitante = $_POST['email'];
                     $senhaVisitante = $_POST['senha'];
@@ -108,12 +107,14 @@
                     $sql = "INSERT INTO visitante (nmVisitante,emailVisitante, senhaVisitante, celularVisitante, dtNascimentoVisitante, tipoDeficienciaVisitante) VALUES ('$nmVisitante', '$emailVisitante', '$senhaVisitante', '$celularVisitante', '$dtNascimentoVisitante', '$tipoDeficienciaVisitante')";
 
                     if ($conn->query($sql) === TRUE) {
-                          echo "Novo registro criado com sucesso";
+                         echo "<script>alert('Cadastro efetuado com sucesso!')
+                                        window.open('index.php','_self')</script>";
                     } else {
                           echo "Error: " . $sql . "<br>" . $conn->error;
                           }
 
                     $conn->close();
+                    }
     ?>
         <?php include_once "rodape.php" ?>
     </body>

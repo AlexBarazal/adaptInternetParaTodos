@@ -1,4 +1,4 @@
-create table administrador
+reate table administrador
 (idAdmin int unsigned  not null auto_increment,
 nmAdmin varchar(100) not null,
 celularAdmin int not null,
