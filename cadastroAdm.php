@@ -18,7 +18,7 @@
         <section id="contact">
             <div class="container">
                 <br>
-                <h2 class="text-center">Cadastro de Administrador</h2>
+                <h3 class="text-center">Cadastro de Administrador</h3>
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
@@ -26,7 +26,7 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>
-                                    <input type="text" name="nome" class="form-control" placeholder="Nome" id="nmAdm" required data-validation-required-message="Favor inserir o nome!">
+                                    <input type="text" name="nome" class="form-control" placeholder="Nome" id="nmAdm" maxlength="100" required data-validation-required-message="Favor inserir o nome!">
                                 <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -44,13 +44,13 @@
                                 <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="row control-group">
+                            <!--div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="senhaC">Confirme a Senha</label>
                                     <input type="password" name="senhaC" class="form-control" placeholder="Confirme a Senha" id="senhaAdmC" minlength="8" maxlength="16" required data-validation-required-message="Favor confirmar a senha">
                                 <p class="help-block text-danger"></p>
                                 </div>
-                            </div>
+                            </div-->
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>

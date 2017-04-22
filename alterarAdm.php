@@ -18,7 +18,7 @@
         <section id="contact">
             <div class="container">
                 <br>
-                <h2 class="text-center">Alterar Administrador</h2>
+                <h3 class="text-center">Alterar Administrador</h3>
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
@@ -106,7 +106,6 @@
                if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['celular']))
                         {
                             $id = $_SESSION['id'];
-                            echo $id;
                             include_once "conexao.php";
                             $nmAdm = $_POST["nome"];
                             $emailAdm = $_POST["email"];
