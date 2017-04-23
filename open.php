@@ -50,6 +50,7 @@ if(isset($_POST['email'])){
                 $_SESSION['id'] = $dados['idVisitante'];
                 $_SESSION['nome'] = $dados['nmVisitante'];
                 $_SESSION['email']=$email;
+                $_SESSION['celular'] = $dados['celularVisitante'];
                 $_SESSION['dataNascimento'] = $dados['dtNascimentoVisitante'];
                 $_SESSION['tipoDeficiencia'] = $dados['tipoDeficienciaVisitante'];
                 $_SESSION['user'] = 'visitante';

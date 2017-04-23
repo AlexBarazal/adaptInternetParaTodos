@@ -16,7 +16,7 @@
         <section id="contact">
             <div class="container">
                 <br>
-                <h3 class="text-center">Cadastro de Cliente</h3>
+                <h3 class="text-center">Alterar Cliente</h3>
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
