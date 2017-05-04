@@ -38,17 +38,14 @@ create table pastaArquivo (idPastaArquivo int unsigned not null auto_increment P
  urlPastaAqruivo varchar(200)not null,
  tamanhoPastaArquivo int , 
  formatoPastaArquivo char(5) , 
- idCliente int not null , 
- CONSTRAINT fk_paCliente FOREIGN KEY(idCliente) references cliente(idCliente))
- engine = MYISAM
+ idCliente int not null ) 
+ 
 
 create table conteudo
 (idConteudo int unsigned not null auto_increment PRIMARY KEY,
 nmConteudo varchar(100) not null,
 tipoConteudo char(4) not null,
-idPastaArquivo int not null,
-CONSTRAINT  fk_PastaArquivo FOREIGN KEY (idPastaArquivo) references pastaArquivo(idPastaArquivo))
-engine = MYISAM;
+idPastaArquivo int not null)
 
 create table descricaoConteudo
 (idDescricaoConteudo int unsigned not null auto_increment PRIMARY KEY, 
@@ -56,5 +53,4 @@ conteudoProgramatico varchar(500),
 objetivo varchar(250),
 cargaHorario char(4),
 tipoArquivo char(5), 
-idConteudo int not null, 
-CONSTRAINT fk_Conteudo FOREIGN KEY (idConteudo) references Conteudo(idConteudo)) engine = MYISAM
+idConteudo int not null)

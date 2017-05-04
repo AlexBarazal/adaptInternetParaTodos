@@ -8,8 +8,6 @@
 
 </head>
 
-    <body id="page-top" class="index">
-
        <?php include_once "navegacao.php" ?>
 
 
@@ -17,36 +15,36 @@
         <section id="contact">
             <div class="container">
                 <br>
-                <h2 class="text-center">Adicionar Pasta de Arquivos</h2>
+                <h3 class="text-center">Adicionar Pasta de Arquivos</h3>
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form name="cadastroPastaArquivo" id="pastaArquivoForm" novalidate>
+                        <form action="cadastroPastaArquivo.php" name="sentMessage" id="pastaArquivoForm" method="post" novalidate>
                              <div class="row control-group">
+
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nomeProdutor">Nome Cliente</label>
-                                    <!-- Este campo vai pegar o nome do cliente logado-->
-                                    <input type="text" name="nomeCliente" class="form-control" placeholder="Nome Cliente" id="nomeClientePastaArquivo" maxlength="100">
+                                    <input type="text" name="nomeCliente" value="<?php echo $_SESSION['nome'] ?>"  class="form-control" placeholder="Nome Cliente" id="nomeClientePastaArquivo" maxlength="100" required>
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nomePasta">Nome da Pasta</label>
-                                    <input type="text" name="nomePasta" class="form-control" placeholder="Nome da Pasta" id="nomePastaArquivo" maxlength="80">
+                                    <input type="text" name="nomePasta" class="form-control" placeholder="Nome da Pasta" id="nomePastaArquivo" maxlength="80" required>
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="url">Link da Pasta</label>
-                                    <input type="text" name="url" class="form-control" placeholder="Link" id="urlPastaArquivo" maxlength="200">
+                                    <input type="text" name="url" class="form-control" placeholder="Link" id="urlPastaArquivo" maxlength="200" required>
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="tamanho">Tamanho do Arquivo</label>
-                                    <input type="number" name="tamanho" class="form-control" placeholder="Tamanho" id="tamanhoPastaArquivo">
+                                    <input type="text" name="tamanho" class="form-control" placeholder="Tamanho" id="tamanhoPastaArquivo">
                                 </div>
                             </div>
                             <div class="row control-group">
@@ -60,9 +58,9 @@
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Consultar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Alterar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Excluir</button>
+                                    <button type="reset" class="btn btn-success btn-lg">Limpar</button>
+                                    <button type="reset" class="btn btn-success btn-lg" onclick="location.href='index.php'">Cancelar</button>
+                                    
                                 </div>
                             </div>
                         </form>
@@ -72,35 +70,29 @@
         </section>
         <?php
          //Validando os Dados
-            if(isset($_POST['nomePastaArquivo']) && isset($_POST['urlPastaArquivo']) && isset($_POST['tamanhoPastaArquivo']) && isset($_POST['formatoPastaArquivo']))
-                    {
+         //include_once "cabecalho.php";
+         //echo print_r($_SESSION);
+            if(isset($_POST['nomePasta']) && isset($_POST['url']))
+                    {            
                     include_once "conexao.php";
-
-                    //$idCliente = (Buscar id usuario logado);
+                    $idCliente = $_SESSION['id'];
+                    $nmCliente = $_SESSION['nome'];
                     $nmPastaArquivo = $_POST["nomePasta"];
                     $urlPastaArquivo = $_POST["url"];
                     $tamanhoPastaArquivo = $_POST["tamanho"];
                     $formatoPastaArquivo = $_POST["formato"];
-                    
-                    if(empty($_POST["nomePasta"]))
-                        echo "<script>alert('Campo nome da Pasta Obrigatório!');</script>";
-                    else
-                    if(empty($_POST["url"]))
-                        echo "<script>alert('Campo url da pasta Obrigatório!');</script>";
-                    else{
 
                     $sql = "INSERT INTO pastaarquivo (nmPastaArquivo, urlPastaArquivo, tamanhoPastaArquivo, formatoPastaArquivo, idCliente) VALUES ('$nmPastaArquivo', '$urlPastaArquivo', '$tamanhoPastaArquivo', '$formatoPastaArquivo', '$idCliente')";
 
                     if ($conn->query($sql) === TRUE) {
-                          echo "<script>alert('Cadastro efetuado com sucesso!');</script>";;
+                         echo "<script>alert('Pasta Cadastrada com sucesso')
+                                window.open('cadastroConteudo.php','_self')</script>";
                     } else {
                           echo "Error: " . $sql . "<br>" . $conn->error;
                           }
-                    }
                     $conn->close();
                 }
     ?>
-
         <?php include_once "rodape.php" ?>
     </body>
 </html>

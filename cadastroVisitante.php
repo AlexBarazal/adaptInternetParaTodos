@@ -18,7 +18,7 @@
         <section id="contact">
             <div class="container">
                 <br>
-                <h2 class="text-center">Cadastro de Visitante</h2>
+                <h3 class="text-center">Cadastro de Visitante</h3>
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
