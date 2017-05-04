@@ -8,8 +8,28 @@
 
 </head>
 
-       <?php include_once "navegacao.php" ?>
+<<<<<<< HEAD
+=======
+    <body id="page-top" class="index">
+    <?php
+   
+        // A sessão precisa ser iniciada em cada página diferente
+        if (!isset($_SESSION)) session_start();
+        
+        $nivel_necessario = 2;
+        
+        // Verifica se não há a variável da sessão que identifica o usuário
+        if (!isset($_SESSION['id']) OR ($_SESSION['userNivel'] <$nivel_necessario)) {
+            // Destrói a sessão por segurança
+            session_destroy();
+            // Redireciona o visitante de volta pro login
+            header("Location: index.php"); exit;
+        }
+    
+    ?>
 
+>>>>>>> c4ed93e4499706a7fb16665f983684f2568b4858
+       <?php include_once "navegacao.php" ?>
 
      <!-- Contact Section -->
         <section id="contact">

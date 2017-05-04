@@ -25,7 +25,7 @@ if(isset($_POST['email'])){
                 $_SESSION['sexo'] = $dados['sexoAdm'];
                 $_SESSION['cpf'] = $dados['cpfAdm'];
                 $_SESSION['rg'] = $dados['rgAdm'];
-                $_SESSION['user'] = 'adm';
+                $_SESSION['userNivel'] = 3;
             }
             echo "<script>window.open('index.php','_self')</script>";
     }elseif($check_userCliente>0){
@@ -42,7 +42,7 @@ if(isset($_POST['email'])){
                 $_SESSION['cep'] = $dados['cepCliente'];
                 $_SESSION['cidade'] = $dados['cidadeCliente'];
                 $_SESSION['estado'] = $dados['estadoCliente'];
-                $_SESSION['user'] = 'cliente';
+                $_SESSION['userNivel'] = 2;
             }
             echo "<script>window.open('index.php','_self')</script>";
     }elseif($check_userVisitante>0){
@@ -53,7 +53,7 @@ if(isset($_POST['email'])){
                 $_SESSION['celular'] = $dados['celularVisitante'];
                 $_SESSION['dataNascimento'] = $dados['dtNascimentoVisitante'];
                 $_SESSION['tipoDeficiencia'] = $dados['tipoDeficienciaVisitante'];
-                $_SESSION['user'] = 'visitante';
+                $_SESSION['userNivel'] = 1;
             }
             echo "<script>window.open('index.php','_self')</script>";
     }else {
