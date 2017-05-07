@@ -66,8 +66,8 @@
                                 </div>
                             </div>
                             <div class="row control-group">
-                                <div class="form-group col-xs-12 ">
-                                    <h3 for="tipoDeficiencia">Tipo de Deficiência</h3>
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <input type="text" placeholder="Tipo de Deficiência" readonly="true">
                                     <select name="tipoDeficiencia" class="form-control" placeholder="Tipo de Deficiência" id="tipoDeficienciaVisitante">
                                         <option value="<?php echo $_SESSION['tipoDeficiencia'] ?>"> <?php echo $_SESSION['tipoDeficiencia'] ?></option>
                                         <option value="nenhuma">Nenhuma</option>

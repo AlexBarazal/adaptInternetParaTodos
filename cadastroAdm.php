@@ -66,7 +66,7 @@
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 ">
-                                    <h3>Sexo</h3>
+                                    <input type="text" name="" class="form-control" placeholder="Sexo" id="" readonly="true">
                                     <select name="sexo" class="form-control" placeholder="Sexo" id="sexoAdm">
                                         <option value="Masculino">Masculino</option>
                                         <option value="Feminino">Feminino</option>
@@ -92,6 +92,7 @@
                                 <div class="form-group col-xs-12">
                                     <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
                                     <button type="reset" class="btn btn-success btn-lg">Limpar</button>
+                                    <button type="reset" class="btn btn-success btn-lg" onclick="location.href='index.php'">Cancelar</button>
                                 </div>
                             </div>
                         </form>

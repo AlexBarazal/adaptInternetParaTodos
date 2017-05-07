@@ -1,14 +1,8 @@
 Tarefas
 1-Formatar campos com mascara
--rg
--data
--cpf
--telefone
+	a-Formatar senha e confirmar senha 
+	b-Formatar tipo de cliente(para aparecer somente o cpf ou cnpj)
 
-2-Login 
--Para todos os usuarios
--Quando a pessoa loga fica o nome dela  no canto da tela
--Quando faz o select para verifcar  email, senha (pegar o id do usuario para usar de referencia para cadastrar outras coisas)
 
 3-Formatação Adaptada
 -Alto Contraste 

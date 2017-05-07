@@ -87,7 +87,7 @@
         </section>
         <?php
          //Validando os Dados
-            if(isset($_POST['objetivo']))
+            if(isset($_POST['objetivo']) && isset($_POST['conteudoProgramatico']))
                     {
                     include_once "conexao.php";
                     $idConteudo = $_POST["nomeConteudo"];

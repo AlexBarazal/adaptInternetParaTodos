@@ -62,13 +62,6 @@
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="senhaC">Confirme a Senha</label>
-                                    <input type="password" name="senhaC" class="form-control" placeholder="Confirme a Senha" id="senhaAdmC" minlength="8" maxlength="16" required data-validation-required-message="Favor confirmar a senha">
-                                <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>
                                     <input type="number" name="celular" value="<?php echo $_SESSION['celular'] ?>" data-mask="(00) 0000-0000" data-mask-selectonfocus="true" class="form-control" placeholder="Celular" id="celularAdm" required data-validation-required-message="Favor inserir o celular">
                                 <p class="help-block text-danger"></p>
@@ -81,8 +74,8 @@
                                 </div>
                             </div>
                             <div class="row control-group">
-                                <div class="form-group col-xs-12 ">
-                                    <h3>Sexo</h3>
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <input type="text" placeholder="SEXO" readonly="true">
                                     <select name="sexo" class="form-control" placeholder="Sexo" id="sexoAdm">
                                         <option value="Masculino">Masculino</option>
                                         <option value="Feminino">Feminino</option>

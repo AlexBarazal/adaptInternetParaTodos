@@ -23,7 +23,7 @@
                           </li>
                           <li class="nav-item">
                               <div class="dropdown">
-                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">AREA DO CLIENTE <span class="caret"></span></button>
+                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">AREA DO USÙARIO <span class="caret"></span></button>
                               <ul class="dropdown-menu">
                                 <li><a href="cadastroPastaArquivo.php">Adicionar Pasta</a></li>
                                 <li><a href="cadastroConteudo.php">Adicionar Conteúdo</a></li>

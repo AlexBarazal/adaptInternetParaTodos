@@ -66,8 +66,8 @@
                                 </div>
                             </div>
                             <div class="row control-group">
-                                <div class="form-group col-xs-12 ">
-                                    <h3 for="tipoDeficiencia">Tipo de Deficiência</h3>
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                     <input type="text" name="" class="form-control" placeholder="Tipo de Deficiência" id="" readonly="true">
                                     <select name="tipoDeficiencia" class="form-control" placeholder="Tipo de Deficiência" id="tipoDeficienciaVisitante">
                                         <option value="nenhuma">Nenhuma</option>
                                         <option value="visual">Visual</option>
@@ -77,14 +77,14 @@
                                         <option value="fisica">Física</option>
                                     </select>
                                 </div>
+                            </div>   
                             <br>
-                            <div id="success"></div>
+                            <div id="success">
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
                                     <button type="reset" class="btn btn-success btn-lg">Limpar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Alterar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Excluir</button>
+                                    <button type="reset" class="btn btn-success btn-lg" onclick="location.href='index.php'">Cancelar</button>
                                 </div>
                             </div>
                         </form>

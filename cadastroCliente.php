@@ -5,7 +5,6 @@
     
     <!--Navigation-->
     <?php include_once "cabecalho.php" ?>
-
 </head>
 
     <body id="page-top" class="index">
@@ -54,31 +53,34 @@
                             </div-->
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 ">
-                                    <h3>Tipo Cliente</h3>
+                                    <input type="text" name="" class="form-control" placeholder="Tipo de cliente" id="" readonly="true">
                                     <select name="tipoCliente" class="form-control" placeholder="tipoCliente" id="tipoCiente">
-                                        <option value="pFisica">Pessoa Física</option>
-                                        <option value="pJuridica">Pessoa Juridica</option>
+                                        <option value="1" onclick="tipoCliente(this.value);">Pessoa Juridica</option>
+                                        <option value="2" onclick="tipoCliente(this.value);">Pessoa Física</option>
                                     </select>
                                 </div>
                             </div>
+                            
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>
                                     <input type="number" name="celular" maxlength="11" class="form-control" placeholder="Celular" id="celularCliente">
                                 </div>
                             </div>
-                            <div class="row control-group">
+                            <div id="divCpf" class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cpf">CPF</label>
                                     <input type="number" name="cpf" maxlength="11" class="form-control" placeholder="CPF" id="cpfCliente">
                                 </div>
                             </div>
-                            <div class="row control-group">
+                            
+                            <div id="divCnpj" style='display: none;' class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="cnpj">CNPJ</label>
+                                    <label for="cpf">CNPJ</label>
                                     <input type="number" name="cpf" class="form-control" placeholder="CNPJ" id="cnpjCliente">
                                 </div>
                             </div>
+                            
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="lagradouro">Lagradouro(rua, avenida, praça viela)</label>
