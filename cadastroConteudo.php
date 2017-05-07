@@ -17,13 +17,13 @@
         <section id="contact">
             <div class="container">
                 <br>
-                <h2 class="text-center">Adicionar Conteúdo</h2>
+                <h3 class="text-center">Adicionar Conteúdo</h3>
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form action="cadastroConteudo.php" name="cadastroConteudo" id="conteudoForm" novalidate>
+                        <form action="cadastroConteudo.php" name="sentMessage" id="conteudoForm" method="post" novalidate>
 
                             
                             <div class="row control-group" >
@@ -42,14 +42,13 @@
                                                         echo "<option value=".$row["idPastaArquivo"].">".$row["nmPastaArquivo"]."</option>";
                                                                     }
                                                                 } else {
-                                                                    echo "0 results";
-                                                                } echo "</table>";
-                                                        
+                                                                    echo "<script>alert('Voçê não tem pasta cadastrada. Será direcionado para cadastrar a pasta')
+                                window.open('casdastroPastaArquivo.php','_self');</script>";
+                                                                }
                                     ?>
                                 </select>
                                 </div>
                             </div>
-                          
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nomeConteudo">Nome Conteúdo</label>
@@ -67,9 +66,8 @@
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Limpar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Alterar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Excluir</button>
+                                    <button type="reset" class="btn btn-success btn-lg">Limpar</button>
+                                    <button type="reset" class="btn btn-success btn-lg" onclick="location.href='index.php'">Cancelar</button>
                                 </div>
                             </div>
                         </form>
@@ -78,7 +76,6 @@
             </div>
         </section>
         <?php
-         //Validando os Dados
             if(isset($_POST['nomeConteudo']) && isset($_POST['tipoConteudo']))
                     {
                     include_once "conexao.php";
@@ -87,13 +84,13 @@
                     $tipoConteudo = $_POST["tipoConteudo"];
                     $sql = "INSERT INTO conteudo (nmConteudo, tipoConteudo, idPastaArquivo) VALUES ('$nmConteudo', '$tipoConteudo', '$idPastaArquivo')";
                     if ($conn->query($sql) === TRUE) {
-                          echo "<script>alert('Cadastro efetuado com sucesso!');</script>";;
-                    } else {
+                          echo "<script>alert('Cadastro efetuado com sucesso!')
+                                window.open('index.php','_self');</script>";
+                   }else {
                           echo "Error: " . $sql . "<br>" . $conn->error;
                           }
                     }
                     $conn->close();
-                
     ?>
 
         <?php include_once "rodape.php" ?>

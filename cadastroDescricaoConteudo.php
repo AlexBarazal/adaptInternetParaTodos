@@ -17,13 +17,37 @@
         <section id="contact">
             <div class="container">
                 <br>
-                <h2 class="text-center">Adicionar Descrição de Conteúdo</h2>
+                <h3 class="text-center">Adicionar Descrição de Conteúdo</h3>
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form name="cadastroDescricaoConteudo" id="descricaoConteudoForm" novalidate>
+                        <form action="cadastroDescrucaoConteudo.php" name="sentMessage" id="descricaoConteudoForm" method="post" novalidate>
+                            <div class="row control-group" >
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <input type="text" class="form-control" placeholder="Nome Conteúdo" id="" readonly="true">
+                                <select name="nomeConteudo" id="">
+                                    <?php
+
+                                        include_once"conexao.php";
+                                        $idC = $_SESSION['id'];
+                                        echo $idC;
+                                            $sql = "SELECT * FROM pastaarquivo WHERE idCliente=$idC" ;
+                                            $result = $conn->query($sql);
+                                                if ($result->num_rows > 0) {
+                                                    while($row = $result->fetch_assoc()) {
+                                                        echo "<option value=".$row["idPastaArquivo"].">".$row["nmPastaArquivo"]."</option>";
+                                                                    }
+                                                                } else {
+                                                                    echo "<script>alert('Voçê não tem pasta cadastrada. Será direcionado para cadastrar a pasta')
+                                window.open('casdastroPastaArquivo.php','_self');</script>";
+                                                                }
+                                    ?>
+                                </select>
+                                </div>
+                            </div>
+
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nomeConteudo">Nome Contéudo</label>
@@ -99,7 +123,7 @@
                           }
                     }
                     $conn->close();
-                }
+                
     ?>
 
         <?php include_once "rodape.php" ?>
