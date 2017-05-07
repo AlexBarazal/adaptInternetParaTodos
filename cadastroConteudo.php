@@ -11,7 +11,7 @@
     <body id="page-top" class="index">
 
        <?php include_once "navegacao.php" ?>
-
+       
 
      <!-- Contact Section -->
         <section id="contact">
@@ -23,14 +23,33 @@
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form name="cadastroConteudo" id="conteudoForm" novalidate>
-                            <div class="row control-group">
+                        <form action="cadastroConteudo.php" name="cadastroConteudo" id="conteudoForm" novalidate>
+
+                            
+                            <div class="row control-group" >
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="nomePasta">Nome da Pasta</label>
-                                    <!-- Este campo vai pegar o nome da pasta deste conteúdo-->
-                                    <input type="text" name="nomePasta" class="form-control" placeholder="Nome da Pasta" id="nomePastaArquivo" maxlength="80">
+                                <input type="text" class="form-control" placeholder="Nome Pasta" id="" readonly="true">
+                                <select name="nomePasta" id="">
+                                    <?php
+
+                                        include_once"conexao.php";
+                                        $idC = $_SESSION['id'];
+                                        echo $idC;
+                                            $sql = "SELECT * FROM pastaarquivo WHERE idCliente=$idC" ;
+                                            $result = $conn->query($sql);
+                                                if ($result->num_rows > 0) {
+                                                    while($row = $result->fetch_assoc()) {
+                                                        echo "<option value=".$row["idPastaArquivo"].">".$row["nmPastaArquivo"]."</option>";
+                                                                    }
+                                                                } else {
+                                                                    echo "0 results";
+                                                                } echo "</table>";
+                                                        
+                                    ?>
+                                </select>
                                 </div>
                             </div>
+                          
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nomeConteudo">Nome Conteúdo</label>
@@ -60,26 +79,13 @@
         </section>
         <?php
          //Validando os Dados
-            if(isset($_POST['nomePasta']) && isset($_POST['nomeConteudo']) && isset($_POST['tipoConteudo']))
+            if(isset($_POST['nomeConteudo']) && isset($_POST['tipoConteudo']))
                     {
                     include_once "conexao.php";
-
-                    $nmPastaArquivo = $_POST["nomePasta"];
+                    $idPastaArquivo = $_POST["nomePasta"];
                     $nmConteudo = $_POST["nomeConteudo"];
                     $tipoConteudo = $_POST["tipoConteudo"];
-                    
-                    if(empty($_POST["nomePasta"]))
-                        echo "<script>alert('Campo nome da Pasta Obrigatório!');</script>";
-                    else
-                    if(empty($_POST["nmConteudo"]))
-                        echo "<script>alert('Campo nome do contéudo Obrigatório!');</script>";
-                    else
-                    if(empty($_POST["tipoConteudo"]))
-                        echo "<script>alert('Campo tipo de contéudo Obrigatório!');</script>";
-                    else{
-
-                    $sql = "INSERT INTO conteudo (nmPastaArquivo, nmConteudo, tipoConteudo) VALUES ('$nmPastaArquivo', '$nmConteudo', '$tipoConteudo')";
-
+                    $sql = "INSERT INTO conteudo (nmConteudo, tipoConteudo, idPastaArquivo) VALUES ('$nmConteudo', '$tipoConteudo', '$idPastaArquivo')";
                     if ($conn->query($sql) === TRUE) {
                           echo "<script>alert('Cadastro efetuado com sucesso!');</script>";;
                     } else {
@@ -87,7 +93,7 @@
                           }
                     }
                     $conn->close();
-                }
+                
     ?>
 
         <?php include_once "rodape.php" ?>

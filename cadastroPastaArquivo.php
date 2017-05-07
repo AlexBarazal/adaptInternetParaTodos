@@ -8,8 +8,6 @@
 
 </head>
 
-<<<<<<< HEAD
-=======
     <body id="page-top" class="index">
     <?php
    
@@ -28,7 +26,7 @@
     
     ?>
 
->>>>>>> c4ed93e4499706a7fb16665f983684f2568b4858
+
        <?php include_once "navegacao.php" ?>
 
      <!-- Contact Section -->
