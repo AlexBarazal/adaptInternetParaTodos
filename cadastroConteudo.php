@@ -42,8 +42,7 @@
                                                         echo "<option value=".$row["idPastaArquivo"].">".$row["nmPastaArquivo"]."</option>";
                                                                     }
                                                                 } else {
-                                                                    echo "<script>alert('Voçê não tem pasta cadastrada. Será direcionado para cadastrar a pasta')
-                                window.open('casdastroPastaArquivo.php','_self');</script>";
+                                                                    echo "<script>alert('Voçê não tem pasta cadastrada.')window.open('cadastroPastaArquivo.php','_self');</script>";
                                                                 }
                                     ?>
                                 </select>
@@ -85,7 +84,7 @@
                     $sql = "INSERT INTO conteudo (nmConteudo, tipoConteudo, idPastaArquivo) VALUES ('$nmConteudo', '$tipoConteudo', '$idPastaArquivo')";
                     if ($conn->query($sql) === TRUE) {
                           echo "<script>alert('Cadastro efetuado com sucesso!')
-                                window.open('index.php','_self');</script>";
+                                window.open('cadastroDescricaoConteudo.php','_self');</script>";
                    }else {
                           echo "Error: " . $sql . "<br>" . $conn->error;
                           }

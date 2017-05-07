@@ -23,62 +23,46 @@
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form action="cadastroDescrucaoConteudo.php" name="sentMessage" id="descricaoConteudoForm" method="post" novalidate>
+                        <form action="cadastroDescricaoConteudo.php" name="sentMessage" id="descricaoConteudoForm" method="post" novalidate>
                             <div class="row control-group" >
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <input type="text" class="form-control" placeholder="Nome Conteúdo" id="" readonly="true">
                                 <select name="nomeConteudo" id="">
                                     <?php
-
                                         include_once"conexao.php";
                                         $idC = $_SESSION['id'];
                                         echo $idC;
-                                            $sql = "SELECT * FROM pastaarquivo WHERE idCliente=$idC" ;
+                                            $sql = "SELECT * FROM conteudo c, pastaarquivo p  WHERE p.idCliente = $idC AND  c.idPastaArquivo = p.idPastaArquivo";
                                             $result = $conn->query($sql);
                                                 if ($result->num_rows > 0) {
                                                     while($row = $result->fetch_assoc()) {
-                                                        echo "<option value=".$row["idPastaArquivo"].">".$row["nmPastaArquivo"]."</option>";
+                                                        echo "<option value=".$row["idConteudo"].">".$row["nmConteudo"]."</option>";
                                                                     }
                                                                 } else {
                                                                     echo "<script>alert('Voçê não tem pasta cadastrada. Será direcionado para cadastrar a pasta')
-                                window.open('casdastroPastaArquivo.php','_self');</script>";
+                                window.open('cadastroPastaArquivo.php','_self');</script>";
                                                                 }
                                     ?>
                                 </select>
                                 </div>
                             </div>
-
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="nomeConteudo">Nome Contéudo</label>
-                                    <!-- Este campo vai pegar o nome da pasta deste conteúdo-->
-                                    <input type="text" name="nmConteudo" class="form-control" placeholder="Nome Conteúdo" id="nmConteudo" maxlength="500">
+                                    <label for="objetivo">Objetivo</label>
+                                    <input type="text" name="objetivo" class="form-control" placeholder="Objetivo" id="objetivo" maxlength="100">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="conteudoProgramatico">Conteúdo Programático</label>
                                     <!-- Este campo vai pegar o nome da pasta deste conteúdo-->
-                                    <input type="text" name="conteudoProgramatico" class="form-control" placeholder="Conteúdo Progarmático" id="conteudoProgramatico" maxlength="500">
-                                </div>
-                            </div>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="objetivo">Objetivo</label>
-                                    <!-- Este campo vai pegar o nome da pasta deste conteúdo-->
-                                    <input type="text" name="objetivo" class="form-control" placeholder="Objetivo" id="objetivo" maxlength="100">
+                                    <input type="text" name="conteudoProgramatico" class="form-control" placeholder="Conteúdo Programático" id="conteudoProgramatico" maxlength="500">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cargaHoraria">Carga Horário</label>
                                     <input type="text" name="cargaHorario" class="form-control" placeholder="Carga Horário" id="cargaHoraria" maxlength="100">
-                                </div>
-                            </div>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label for="objetivo">Objetivo</label>
-                                    <input type="text" name="objetivo" class="form-control" placeholder="Objetivo Programático" id="objetivo" maxlength="100">
                                 </div>
                             </div>
                             <div class="row control-group">
@@ -91,10 +75,9 @@
                             <div id="success"></div>
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Limpar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Alterar</button>
-                                    <button type="submit" class="btn btn-success btn-lg">Excluir</button>
+                                      <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+                                    <button type="reset" class="btn btn-success btn-lg">Limpar</button>
+                                    <button type="reset" class="btn btn-success btn-lg" onclick="location.href='index.php'">Cancelar</button>
                                 </div>
                             </div>
                         </form>
@@ -104,20 +87,20 @@
         </section>
         <?php
          //Validando os Dados
-            if(isset($_POST['nomeConteudo']) && isset($_POST['conteudoProgramatico']) && isset($_POST['objetivo']) && isset($_POST['cargaHoraria']) && isset($_POST['tipo']))
+            if(isset($_POST['objetivo']))
                     {
                     include_once "conexao.php";
-
-                    $nmConteudo = $_POST["nomeConteudo"];
+                    $idConteudo = $_POST["nomeConteudo"];
+                    $objetivo = $_POST["objetivo"];
                     $conteudoProgramatico = $_POST["conteudoProgramatico"];
                     $cargaHoraria = $_POST["cargaHoraria"];
                     $tipoArquivo = $_POST["tipoArquivo"];
                     //$idConteudo = Pegar id dos cokkies
-
-                    $sql = "INSERT INTO descricaoconteudo (nmConteudo, conteudoProgramatico,cargaHoraria, tipoArquivo, idConteudo) VALUES ('$nmConteudo', '$conteudoProgramatico', '$cargaHoraria', '$tipoArquivo', '$idConteudo')";
+                    $sql = "INSERT INTO descricaoconteudo (conteudoProgramatico, objetivo, cargaHoraria, tipoArquivo, idConteudo) VALUES ('$conteudoProgramatico', '$objetivo', '$cargaHoraria', '$tipoArquivo', '$idConteudo')";
 
                     if ($conn->query($sql) === TRUE) {
-                          echo "<script>alert('Cadastro efetuado com sucesso!');</script>";;
+                          echo "<script>alert('Cadastro efetuado com sucesso!')
+                                window.open('index.php _self');</script>";;
                     } else {
                           echo "Error: " . $sql . "<br>" . $conn->error;
                           }
