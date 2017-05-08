@@ -6,9 +6,6 @@
     <!--Navigation-->
     <?php include_once "cabecalho.php" ?>
 
-</head>
-
-    <body id="page-top" class="index">
     <?php
    
         // A sessão precisa ser iniciada em cada página diferente
@@ -26,6 +23,9 @@
     
     ?>
 
+</head>
+
+    <body id="page-top" class="index">
 
        <?php include_once "navegacao.php" ?>
 
