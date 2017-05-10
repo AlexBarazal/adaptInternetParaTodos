@@ -53,7 +53,7 @@
                             </div-->
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 ">
-                                    <input type="text" name="" class="form-control" placeholder="Tipo de cliente" id="" readonly="true" >
+                                    <input type="text" name="" class="form-control" placeholder="Tipo de cliente" id="" readonly="true" required data-validation-required-message="">
                                     <select name="tipoCliente" class="form-control" placeholder="tipoCliente" id="tipoCiente">
                                         <option value="1" onclick="tipoCliente(this.value);">Pessoa Juridica</option>
                                         <option value="2" onclick="tipoCliente(this.value);">Pessoa Física</option>
@@ -64,33 +64,33 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>
-                                    <input type="number" name="celular" maxlength="11" class="form-control" placeholder="Celular" id="celularCliente">
+                                    <input type="number" name="celular" maxlength="11" class="form-control" placeholder="Celular" id="celularCliente" required data-validation-required-message="">
                                 </div>
                             </div>
                             <div id="divCpf" class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cpf">CPF</label>
-                                    <input type="number" name="cpf" maxlength="11" class="form-control" placeholder="CPF" id="cpfCliente">
+                                    <input type="number" name="cpf" maxlength="11" class="form-control" placeholder="CPF" id="cpfCliente" required data-validation-required-message="">
                                 </div>
                             </div>
                             
                             <div id="divCnpj" style='display: none;' class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cpf">CNPJ</label>
-                                    <input type="number" name="cpf" class="form-control" placeholder="CNPJ" id="cnpjCliente">
+                                    <input type="number" name="cpf" class="form-control" placeholder="CNPJ" id="cnpjCliente" required data-validation-required-message="">
                                 </div>
                             </div>
                             
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="lagradouro">Lagradouro(rua, avenida, praça viela)</label>
-                                    <input type="text" name="lagradouro" class="form-control" placeholder="Lagradouro" id="lagradouroCliente" maxlength="100">
+                                    <input type="text" name="lagradouro" class="form-control" placeholder="Lagradouro" id="lagradouroCliente" maxlength="100" required data-validation-required-message="">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="numero">Numero</label>
-                                    <input type="number" name="numero" class="form-control" placeholder="Numero" id="numeroCliente" maxlength="100">
+                                    <input type="number" name="numero" class="form-control" placeholder="Numero" id="numeroCliente" maxlength="100" required data-validation-required-message="">
                                 </div>
                             </div>
                             <div class="row control-group">
@@ -102,25 +102,25 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="bairro">Bairro</label>
-                                    <input type="text" name="bairro" class="form-control" placeholder="Bairro" id="bairroCliente" maxlength="50">
+                                    <input type="text" name="bairro" class="form-control" placeholder="Bairro" id="bairroCliente" maxlength="50" required data-validation-required-message="">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cep">Cep</label>
-                                    <input type="number" name="cep" class="form-control" placeholder="Cep" id="cepCliente">
+                                    <input type="number" name="cep" class="form-control" placeholder="Cep" id="cepCliente" required data-validation-required-message="">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cidade">Cidade</label>
-                                    <input type="text" name="cidade" class="form-control" placeholder="Cidade" id="cidadeCliente" maxlength="50">
+                                    <input type="text" name="cidade" class="form-control" placeholder="Cidade" id="cidadeCliente" maxlength="50" required data-validation-required-message="">
                                 </div>
                             </div>
                              <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="estado">Estado</label>
-                                    <input type="text" name="estado" class="form-control" placeholder="Estado" id="estadoCliente" maxlength="2">
+                                    <input type="text" name="estado" class="form-control" placeholder="Estado" id="estadoCliente" maxlength="2" required data-validation-required-message="">
                                 </div>
                             </div>
                             <br>

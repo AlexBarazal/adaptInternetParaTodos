@@ -68,13 +68,13 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nomeConteudo">Nome Conteúdo</label>
-                                    <input type="text" name="nomeConteudo" class="form-control" placeholder="Nome" id="nomeConteudo" maxlength="100">
+                                    <input type="text" name="nomeConteudo" class="form-control" placeholder="Nome" id="nomeConteudo" maxlength="100" required data-validation-required-message="">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="tipoConteudo">Tipo Conteúdo</label>
-                                    <input type="text" name="tipoConteudo" class="form-control" placeholder="Tipo" id="tipoConteudo" maxlength="100">
+                                    <input type="text" name="tipoConteudo" class="form-control" placeholder="Tipo" id="tipoConteudo" maxlength="100" required data-validation-required-message="">
                                 </div>
                             </div>
                             <br>

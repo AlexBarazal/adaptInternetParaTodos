@@ -56,13 +56,13 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="celular">Celular</label>
-                                    <input type="number" name="celular" class="form-control" placeholder="Celular" id="celularVisitante">
+                                    <input type="number" name="celular" class="form-control" placeholder="Celular" id="celularVisitante" required data-validation-required-message="">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="dataNascimento">Data Nascimento</label>
-                                    <input type="number" name="dataNascimento" class="form-control" placeholder="Data de Nascimento" id="dtNascimentoVisitante">
+                                    <input type="number" name="dataNascimento" class="form-control" placeholder="Data de Nascimento" id="dtNascimentoVisitante" required data-validation-required-message="">
                                 </div>
                             </div>
                             <div class="row control-group">
