@@ -24,7 +24,7 @@
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form name="cadastroVisitante" id="visitanteForm" action="" method="post">
+                        <form name="cadastroVisitante" id="visitanteForm" action="cadastroVisitante.php" method="post">
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>

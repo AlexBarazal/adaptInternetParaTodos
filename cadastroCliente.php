@@ -22,7 +22,7 @@
                     <div class="col-lg-8 offset-lg-2">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                        <form action="cadastroCliente.php" method="post" name="sentMessage" id="clienteForm" novalidate>
+                        <form name="cadastroCliente" id="clienteForm" action="cadastroCliente.php" method="post">
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>
@@ -53,7 +53,7 @@
                             </div-->
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 ">
-                                    <input type="text" name="" class="form-control" placeholder="Tipo de cliente" id="" readonly="true">
+                                    <input type="text" name="" class="form-control" placeholder="Tipo de cliente" id="" readonly="true" >
                                     <select name="tipoCliente" class="form-control" placeholder="tipoCliente" id="tipoCiente">
                                         <option value="1" onclick="tipoCliente(this.value);">Pessoa Juridica</option>
                                         <option value="2" onclick="tipoCliente(this.value);">Pessoa Física</option>

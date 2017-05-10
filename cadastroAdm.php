@@ -39,7 +39,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form action="cadastroAdm.php" name="sentMessage" id="admForm" method="post" novalidate>
+                        <form name="cadastroAdm" id="admForm" action="cadastroAdm.php" method="post">
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="nome">Nome</label>
@@ -78,12 +78,12 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="dataNascimento">Data Nascimento</label>
-                                    <input type="number" name="dataNascimento" class="form-control" placeholder="Data de Nascimento" id="dtNascimentoAdm">
+                                    <input type="number" name="dataNascimento" class="form-control" placeholder="Data de Nascimento" id="dtNascimentoAdm" required data-validation-required-message="Favor inserir data de nascimento">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 ">
-                                    <input type="text" name="" class="form-control" placeholder="Sexo" id="" readonly="true">
+                                    <input type="text" name="" class="form-control" placeholder="Sexo" id="" readonly="true" required data-validation-required-message="Favor selecionar sexo">
                                     <select name="sexo" class="form-control" placeholder="Sexo" id="sexoAdm">
                                         <option value="Masculino">Masculino</option>
                                         <option value="Feminino">Feminino</option>
@@ -93,13 +93,13 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cpf">CPF</label>
-                                    <input type="number" name="cpf" class="form-control" placeholder="CPF" id="cpfAdm">
+                                    <input type="number" name="cpf" class="form-control" placeholder="CPF" id="cpfAdm" required data-validation-required-message="Favor inserir cpf">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="rg">RG</label>
-                                    <input type="text" name="rg" class="form-control" placeholder="RG" id="rgAdm">
+                                    <input type="text" name="rg" class="form-control" placeholder="RG" id="rgAdm" required data-validation-required-message="Favor inserir rg">
                                 </div>
                             </div>
 
@@ -131,7 +131,7 @@
                             $sexoAdm = $_POST["sexo"];
                             $cpfAdm= $_POST["cpf"];
                             $rgAdm = $_POST["rg"];
-                            $sql = "INSERT INTO administrador (nmAdm, emailAdm, senhaAdm, celularAdm, dtNascimentoAdm, sexoAdm, cpfAdm, rgAdm) VALUES ('$nmAdm', '$emailAdm', '$senhaAdm', '$celularAdm', '$dtNascimentoAdm', '$sexoAdm', '$cpfAdm', '$rgAdm')";
+                            $sql = "INSERT INTO administrador (nmAdm, emailAdm, senhaAdm, celularAdm, dtNascimentoAdm, sexoAdm, cpf_cnpjAdm, rgAdm) VALUES ('$nmAdm', '$emailAdm', '$senhaAdm', '$celularAdm', '$dtNascimentoAdm', '$sexoAdm', '$cpfAdm', '$rgAdm')";
 
                             if ($conn->query($sql) === TRUE) {
                                   echo "<script>alert('Cadastro efetuado com sucesso!')
