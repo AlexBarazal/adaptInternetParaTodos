@@ -84,13 +84,13 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="lagradouro">Lagradouro(rua, avenida, praça viela)</label>
-                                    <input type="text" name="lagradouro" class="form-control" placeholder="Lagradouro" id="lagradouroCliente" maxlength="100" required data-validation-required-message="">
+                                    <input type="text" name="lagradouro" class="form-control" placeholder="Lagradouro" id="lagradouroCliente" maxlength="100" >
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="numero">Numero</label>
-                                    <input type="number" name="numero" class="form-control" placeholder="Numero" id="numeroCliente" maxlength="100" required data-validation-required-message="">
+                                    <input type="number" name="numero" class="form-control" placeholder="Numero" id="numeroCliente" maxlength="100">
                                 </div>
                             </div>
                             <div class="row control-group">
@@ -102,25 +102,25 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="bairro">Bairro</label>
-                                    <input type="text" name="bairro" class="form-control" placeholder="Bairro" id="bairroCliente" maxlength="50" required data-validation-required-message="">
+                                    <input type="text" name="bairro" class="form-control" placeholder="Bairro" id="bairroCliente" maxlength="50">
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cep">Cep</label>
-                                    <input type="number" name="cep" class="form-control" placeholder="Cep" id="cepCliente" required data-validation-required-message="">
+                                    <input type="number" name="cep" class="form-control" placeholder="Cep" id="cepCliente" >
                                 </div>
                             </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cidade">Cidade</label>
-                                    <input type="text" name="cidade" class="form-control" placeholder="Cidade" id="cidadeCliente" maxlength="50" required data-validation-required-message="">
+                                    <input type="text" name="cidade" class="form-control" placeholder="Cidade" id="cidadeCliente" maxlength="50" >
                                 </div>
                             </div>
                              <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="estado">Estado</label>
-                                    <input type="text" name="estado" class="form-control" placeholder="Estado" id="estadoCliente" maxlength="2" required data-validation-required-message="">
+                                    <input type="text" name="estado" class="form-control" placeholder="Estado" id="estadoCliente" maxlength="2" >
                                 </div>
                             </div>
                             <br>
