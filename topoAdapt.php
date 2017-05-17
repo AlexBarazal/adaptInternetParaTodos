@@ -47,7 +47,7 @@ id="page-top" class="index">
     <!-- Header -->
     <header>
         <div class="container">
-            <img class="img-fluid" src="img/profile.jpg" alt="">
+            <img class="img-fluid" src="img/profile.png" alt="">
             <div class="intro-text">
                 <span class="name">Adapt</span>
                 <hr>
