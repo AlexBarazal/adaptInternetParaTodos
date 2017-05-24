@@ -1,5 +1,5 @@
 <?php
-		/*$servername = "127.0.0.1";
+		$servername = "127.0.0.1";
 		$username = "root";
 		$password = "";
 		$dbname = "adapt";
@@ -10,10 +10,11 @@
 		// Check connection
 		if (!$conn) {
 		    die("Connection failed: " . mysqli_connect_error());
-		}*/
+		}
 		/*else{
 			echo "Conectado com successo <br><br>";
 		}*/
+		/*
 		$servername = "us-cdbr-iron-east-03.cleardb.net";
 		$username = "b6728f1165e4eb";
 		$password = "1d141cc4";
@@ -25,5 +26,5 @@
 		// Check connection
 		if (!$conn) {
 		    die("Connection failed: " . mysqli_connect_error());
-		}
+		}*/
  ?>
