@@ -43,32 +43,34 @@
                         <form action="conteudoCliente.php" name="sentMessage" id="conteudoForm" method="post">
                         <?php
                             pArquivo();
+                            conteudo(7);
                          ?>
 
         </section>
         <?php include_once "rodape.php" ?>
         <?php 
+            include_once "conexao.php";
             function  pArquivo(){
                 include_once "conexao.php";
-                            $sql = "SELECT * FROM pastaarquivo WHERE idCliente = $_SESSION[id]";
-                            $r1 = $conn->query($sql);
+                            $sql1 = "SELECT * FROM pastaarquivo WHERE idCliente = $_SESSION[id]";
+                            $r1 = $conn->query($sql1);
                             if ($r1->num_rows > 0) {
                                 while($row = $r1->fetch_assoc()) {
                                     echo "<br>Nome da Pasta: " .$row["nmPastaArquivo"];
                                     $idPastaA = $row["idPastaArquivo"];
-                                    conteudo($idPastaA);
-                                    echo " teste" .$idPastaA;
+                                    //conteudo($idPastaA);
+                                    //echo "<br> teste" .$idPastaA;
                                 }
                             }else {
                                 echo "Não existe pasta deste cliente";
                             }
-                $conn->close();
+               
             }
                 
             function  conteudo($idPastaA){
-                include_once "conexao.php";
-                            $sql = "SELECT * FROM conteudo WHERE idPastaArquivo = $idPastaA";
-                            $r2 = $conn->query($sql);
+                
+                            $sql2 = "SELECT * FROM conteudo WHERE idPastaArquivo = $idPastaA";
+                            $r2 = $conn->query($sql2);
                             if ($r2->num_rows > 0) {
                                 while($row = $r2->fetch_assoc()) {
                                     echo "<br>Nome do conteudo: " .$row["nmConteudo"];
@@ -76,8 +78,9 @@
                             }else {
                                 echo "Não existe conteudo nessa pasta";
                             } 
-                $conn->close();
+             
             }
+            $conn->close();
 /*
 
                                     $sql = "SELECT * FROM descricaoConteudo WHERE idConteudo = $row[idConteudo]";
