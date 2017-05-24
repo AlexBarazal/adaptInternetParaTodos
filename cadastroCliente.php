@@ -137,7 +137,9 @@
                 </div>
             </div>
         </section>
-        <?php
+      <?php include_once "rodape.php" ?>
+    </body>
+    <?php
          //Validando os Dados
          
 
@@ -168,8 +170,6 @@
                     $conn->close();
                 }
     ?>
-        <?php include_once "rodape.php" ?>
-    </body>
 </html>
 
 
