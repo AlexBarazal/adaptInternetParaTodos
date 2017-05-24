@@ -124,10 +124,10 @@
                                 </div>
                             </div>
                             <br>
-                            <div id="success"></div>
+                            <div id="success">
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+                                    <button onclick="cCliente()" class="btn btn-success btn-lg">Cadastrar</button>
                                     <button type="reset" class="btn btn-success btn-lg">Limpar</button>
                                     <button type="reset" class="btn btn-success btn-lg" onclick="location.href='index.php'">Cancelar</button>
                                 </div>
@@ -137,14 +137,10 @@
                 </div>
             </div>
         </section>
-      <?php include_once "rodape.php" ?>
-    </body>
-    <?php
-         //Validando os Dados
-         
-
+         <?php
+         function cCliente(){
             if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['cpf']))     {
-                    //Cadastro ou Alteração dos Dados
+                   
                     include_once "conexao.php";
                     $nmCliente = $_POST["nome"];
                     $emailCliente = $_POST["email"];
@@ -169,7 +165,11 @@
 
                     $conn->close();
                 }
+            }
     ?>
+      <?php include_once "rodape.php" ?>
+    </body>
+   
 </html>
 
 
