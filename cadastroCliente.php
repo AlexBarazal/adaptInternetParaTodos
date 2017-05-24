@@ -77,7 +77,7 @@
                             <div id="divCnpj" style='display: none;' class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label for="cpf">CNPJ</label>
-                                    <input type="number" name="cpf" class="form-control" placeholder="CNPJ" id="cnpjCliente" required data-validation-required-message="">
+                                    <input type="number" name="cpf" class="form-control" placeholder="CNPJ" id="cnpjCliente">
                                 </div>
                             </div>
                             
