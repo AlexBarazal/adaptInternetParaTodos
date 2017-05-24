@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                             <br>
-                            <div id="success">
+                            <div id="success"></div>
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
