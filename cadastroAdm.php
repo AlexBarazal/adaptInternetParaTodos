@@ -131,7 +131,7 @@
                             $sexoAdm = $_POST["sexo"];
                             $cpfAdm= $_POST["cpf"];
                             $rgAdm = $_POST["rg"];
-                            $sql = "INSERT INTO administrador (nmAdm, emailAdm, senhaAdm, celularAdm, dtNascimentoAdm, sexoAdm, cpf_cnpjAdm, rgAdm) VALUES ('$nmAdm', '$emailAdm', '$senhaAdm', '$celularAdm', '$dtNascimentoAdm', '$sexoAdm', '$cpfAdm', '$rgAdm')";
+                            $sql = "INSERT INTO administrador (nmAdm, emailAdm, senhaAdm, celularAdm, dtNascimentoAdm, sexoAdm, cpfjAdm, rgAdm) VALUES ('$nmAdm', '$emailAdm', '$senhaAdm', '$celularAdm', '$dtNascimentoAdm', '$sexoAdm', '$cpfAdm', '$rgAdm')";
 
                             if ($conn->query($sql) === TRUE) {
                                   echo "<script>alert('Cadastro efetuado com sucesso!')
