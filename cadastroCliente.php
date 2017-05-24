@@ -55,8 +55,8 @@
                                 <div class="form-group col-xs-12 ">
                                     <input type="text" name="" class="form-control" placeholder="Tipo de cliente" id="" readonly="true" required data-validation-required-message="">
                                     <select name="tipoCliente" class="form-control" placeholder="tipoCliente" id="tipoCiente">
-                                        <option value="1" onclick="tipoCliente(this.value);">Pessoa Juridica</option>
-                                        <option value="2" onclick="tipoCliente(this.value);">Pessoa Física</option>
+                                        <option value="1" onchange="" ="tipoCliente(this.value);">Pessoa Juridica</option>
+                                        <option value="2" onchange="" ="tipoCliente(this.value);">Pessoa Física</option>
                                     </select>
                                 </div>
                             </div>
