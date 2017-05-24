@@ -129,7 +129,7 @@
                                 <div class="form-group col-xs-12">
                                     <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
                                     <button type="reset" class="btn btn-success btn-lg">Limpar</button>
-                                    <button type="reset" class="btn btn-success btn-lg" onclick="location.href='index.php'">Cancelar</button>
+                                    <button type="reset" class="btn btn-success btn-lg" onclick="location.href='gravaCliente.php'">Cancelar</button>
                                 </div>
                             </div>
                         </form>
