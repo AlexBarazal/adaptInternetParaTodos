@@ -13,7 +13,7 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <img class="img-fluid" src="profile.png" alt="">
+            <img class="img-fluid" src="img/portfolio/profile.png" alt="">
             <div class="intro-text">
                 <span class="name">Adapt</span>
                 <hr>
