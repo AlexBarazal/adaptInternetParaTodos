@@ -34,6 +34,9 @@
                               <li><a href="alterarAdm.php">Alterar/Excluir Administrador</a></li>
                               <li><a href="alterarCliente.php">Alterar/Excluir Cliente</a></li>
                               <li><a href="alterarVisitante.php">Alterar/Excluir Visitante</a></li>
+                              <li><a href="pesquisarAdm.php">Consultar Administrador</a></li>
+                              <li><a href="pesquisarCliente.php">Consultar Cliente</a></li>
+                              <li><a href="pesquisarVisitante.php">Consultar Visitante</a></li>
                               <li><a href="ConsultaAdm.php">Consultar</a></li>
                               <li><a href="conteudoCliente.php">Meus Arquivos</a></li>
                             </ul>
