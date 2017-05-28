@@ -41,63 +41,75 @@
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                         <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                         <form action="conteudoCliente.php" name="sentMessage" id="conteudoForm" method="post">
-                        <?php
-                           pArquivo();
-                           
-                        ?>
-
-
-
-
-        </section>
-        <?php include_once "rodape.php" ?>
-        <?php 
-            include_once "conexao.php";
-            function  pArquivo(){
-                include_once "conexao.php";
+                        <?php 
+                            include_once "conexao.php";
+                
                             $sql1 = "SELECT * FROM pastaarquivo WHERE idCliente = $_SESSION[id]";
                             $r1 = $conn->query($sql1);
                             if ($r1->num_rows > 0) {
                                 while($row = $r1->fetch_assoc()) {
                                     echo "<br>Nome da Pasta: " .$row["nmPastaArquivo"];
                                     $idPastaA = $row["idPastaArquivo"];
-                                }
-                                conteudo($idPastaA);
-                            }else {
-                                echo "Não existe pasta deste cliente";
-                            }
-                 $conn->close();
-            }
-            function  conteudo($idPastaA){
-                    include_once "conexao.php";
-                            $sql2 = "SELECT * FROM conteudo WHERE idPastaArquivo = $idPastaA";
-                            echo $sql2;
-                            $r2 =  $conn->query($sql2);
-                            if ($r2->num_rows > 0) {
-                                while($row = $r2->fetch_assoc()) {
-                                    echo "<br>  Nome do conteudo: " .$row["nmConteudo"];
-                                    $idConteudo = $row["idConteudo"];
-                                    descricao($idConteudo);
+                                    $sql2 = "SELECT * FROM conteudo WHERE idPastaArquivo = '$idPastaA'";
+                                    $r2 =  $conn->query($sql2);
+                                if ($r2->num_rows > 0) {
+                                    while($row = $r2->fetch_assoc()) {
+                                        echo "<br>Nome do conteudo: " .$row["nmConteudo"];
+                                        $idConteudo = $row["idConteudo"];
+                                        $sql3 = "SELECT * FROM descricaoConteudo WHERE idConteudo = '$idConteudo'";
+                                        $result = $conn->query($sql3);
+                                    if ($result->num_rows > 0) {       
+                                        while($row = $result->fetch_assoc()) {
+                                            echo "<br>Conteudo Programatico: " .$row["conteudoProgramatico"];
+                                        }
+                                    } else {
+                                        echo "<br>Conteudo Programatico: Não existe conteudo programatico neste contéudo";
                                     }
-
+                                 }
                             }else {
-                                echo "Não existe conteudo nessa pasta";
-                            } 
-                     $conn->close();
-            }
-            function descricao($idConteudo){
-                    include_once "conexao.php";
-                            $sql3 = "SELECT * FROM descricaoConteudo WHERE idConteudo = $idConteudo";
+                                echo "<br>Nome do conteudo: Não existe conteudo nessa pasta";
+                            }
+                                }
+                            }else   {
+                                echo "Nome da Pasta: Não existe pasta deste cliente";             
+                            }
+                        
+                            
+                            
+                            /*if ($r2->num_rows > 0) {
+                                
+                                while($row = $r2->fetch_assoc()) {
+                                    echo "<br>Nome do conteudo: " .$row["nmConteudo"];
+                                        $idConteudo = $row["idConteudo"];
+                                        $sql3 = "SELECT * FROM descricaoConteudo WHERE idConteudo = '$idConteudo'";
+                                        $result = $conn->query($sql3);
+                                        if ($result->num_rows > 0) {
+                                            
+                                            while($row = $result->fetch_assoc()) {
+                                                echo "<br>Conteudo Programatico: " .$row["conteudoProgramatico"];
+                                            }
+                                        } else {
+                                            echo "<br>Conteudo Programatico: Não existe conteudo programatico neste contéudo";
+                                        }
+                                 }
+                            }else {
+                                echo "<br>Nome do conteudo: Não existe conteudo nessa pasta";
+                                } 
+                            /*$sql3 = "SELECT * FROM descricaoConteudo WHERE idConteudo = $idConteudo";
                             $result = $conn->query($sql3);
                             if ($result->num_rows > 0) {
                                 while($row = $result->fetch_assoc()) {
-                                    echo "<br>      Conteudo Programatico: " .$row["conteudoProgramatico"];
+                                    echo "<br>Conteudo Programatico: " .$row["conteudoProgramatico"];
                                 }
                             } else {
-                                echo "Não existe conteudo programatico neste contéudo";
-                                }
-                }
-        ?>
+                                echo "<br>Conteudo Programatico: Não existe conteudo programatico neste contéudo";
+                                }*/
+                            
+                                 $conn->close();
+                        ?>
+
+        </section>
+        <?php include_once "rodape.php" ?>
     </body>
 </html>
 
