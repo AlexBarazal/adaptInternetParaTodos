@@ -5,8 +5,10 @@
     <?php include_once "cabecalho.php" ?>
 </head>
 <body onload="tamanhooriginal()"  id="page-top" class="index">
+
 <div id="conteudo">
     <!-- Navigation -->
+
     <?php include_once "navegacao.php" ?>
 
     <!-- Header -->

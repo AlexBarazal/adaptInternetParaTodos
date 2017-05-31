@@ -8,7 +8,8 @@
 
 </head>
 
-    <body id="page-top" class="index">
+    <body onload="tamanhooriginal()" id="page-top" class="index">
+    <div id="conteudo">
 
        <?php include_once "navegacao.php" ?>
 
@@ -54,6 +55,7 @@
         </section>
 
         <?php include_once "rodape.php" ?>
+    </div>
     </body>
 </html>
 

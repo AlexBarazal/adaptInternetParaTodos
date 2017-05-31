@@ -25,7 +25,8 @@
     
 </head>
 
-    <body id="page-top" class="index">
+    <body onload="tamanhooriginal()" id="page-top" class="index">
+    <div id="conteudo">
 
        <?php include_once "navegacao.php" ?>
 
@@ -109,6 +110,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </section>
         <?php
           

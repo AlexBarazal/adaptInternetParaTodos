@@ -1,17 +1,18 @@
 Tarefas
-1-Formatar campos com mascara
-	a-Formatar senha e confirmar senha 
-	b-Formatar tipo de cliente(para aparecer somente o cpf ou cnpj)
 
+Hebert
+1-Formatar campos com mascara
+2-Fazer a lista de melhorias
+
+Renan
+1-Arrumar aquele problema do arquivo conteudoCliente.php
+2-Verificar se as entradas por tipo de usuario esta ok
+
+Camila
+1-Verificar a pagina do facebook não esta abrindo
 
 3-Formatação Adaptada
 -Alto Contraste 
 -Tamanho da fonte
 -Aplicar api HandTalk
 
-4-Colocar os links das Redes Sociais no Rodapé
--Facebook
--G+
--Twitter
-
-5-Criar mapa do site

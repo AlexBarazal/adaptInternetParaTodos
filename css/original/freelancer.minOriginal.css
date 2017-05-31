@@ -3,28 +3,6 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
-#acessibilidade{
-  position: absolute;
-  padding: 3px;
-  top: 300px;
-  left: 5px;
-  right: 0;
-  top: 10px;
-  color: white;
-  text-align: left;
-  list-style-type: none;
-  z-index: 3;
-}
-#acessibilidade a {
-    color: white;
-    text-align: left;
-    padding: 2px ;
-}
-
-
-
-
 body{
 	font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
 	overflow-x:hidden
@@ -78,7 +56,7 @@ hr.star-primary:after{
 header{
 	text-align:center;
 	background:#18bc9c;
-	color:#fff;
+	color:#fff
 	}
 header .container{
 	padding-top:100px;
@@ -100,8 +78,8 @@ header .intro-text .skills{
 	}
 @media (min-width:768px){
 	header .container{
-		padding-top:120px;
-		padding-bottom: 50px;
+		padding-top:200px;
+		padding-bottom:100px
 		}
 header .intro-text .name{
 	font-size:4.75em
@@ -111,7 +89,6 @@ header .intro-text .skills{
 	}
 }
 #mainNav{
-	position: relative;
 	background:#2c3e50;
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	text-transform:uppercase;

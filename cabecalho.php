@@ -10,6 +10,7 @@
     <title>Adapt Internet para Todos</title>
     
     <!-- Bootstrap Core CSS -->
+
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -18,9 +19,14 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link id="eCss" href="css/freelancer.min_.css" rel="stylesheet">
+    <!-- Está linha cima deve ser alterada, para alterar o css com auto contsrate
+    O nome do arquivo com css de auto contrsate e 'freelancer.minConstraste.ccs'
+    que está na pasta css 
+    O arquivo que esta o botão para configurar está no arquivo acessibilidade. php-->
+    
 
-    <!-- Temporary navbar container fix until Bootstrap 4 is patched -->
+
     <style>
     .navbar-toggler {
         z-index: 1;
@@ -32,6 +38,7 @@
         }
     }
     </style>
+   
     <script language="javascript">
             var tamanhotexto = new Number();
             var tamanhotexto = 14;

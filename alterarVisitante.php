@@ -25,7 +25,8 @@
 
 </head>
 
-    <body id="page-top" class="index">
+    <body onload="tamanhooriginal()" id="page-top" class="index">
+    <div id="conteudo">
 
     <?php include_once "navegacao.php" ?>
 
@@ -111,6 +112,7 @@
                 </div>
             </div>
         </section>
+
         <?php
          //Validando os Dados
                     if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha']))
@@ -137,6 +139,7 @@
                     }
     ?>
         <?php include_once "rodape.php" ?>
+    </div>
     </body>
 </html>
 

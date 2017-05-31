@@ -2,16 +2,15 @@
 
 
  <!-- Navigation -->
-        <nav id="mainNav" class="navbar fixed-top navbar-toggleable-md navbar-light">
+        <?php include_once "acessibilidade.php" ?>
+        <nav id="mainNav" class="navbar fixed navbar-toggleable-md navbar-light">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
                 Menu <i class="fa fa-bars"></i>
-            </button>     
-                   
+            </button>
                 <div class="container">
                 <a class="navbar-brand page-scroll" href="index.php#page-top"><i class="fa fa-asl-interpreting fa-flip-horizontal"></i>&nbsp<i class="fa fa-blind fa-flip-horizontal"></i>&nbsp<i class="fa fa-deaf fa-flip-horizontal"></i>&nbsp &nbspAdapt</a>
                 <div class="collapse navbar-collapse" id="navbarExample">
                     <ul class="navbar-nav ml-auto">
-                     
                         <?php if($nivel_acesso==3){?>
                         <li class="nav-item">
                         <div class="dropdown">
