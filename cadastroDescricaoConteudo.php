@@ -117,7 +117,7 @@
 
                     if ($conn->query($sql) === TRUE) {
                           echo "<script>alert('Cadastro efetuado com sucesso!')
-                                window.open('index.php _self');</script>";;
+                                window.open('index.php');</script>";;
                     } else {
                           echo "Error: " . $sql . "<br>" . $conn->error;
                           }

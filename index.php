@@ -4,24 +4,23 @@
 <head>
     <?php include_once "cabecalho.php" ?>
 </head>
-
-<body id="page-top" class="index">
-
+<body onload="tamanhooriginal()"  id="page-top" class="index">
+<div id="conteudo">
     <!-- Navigation -->
     <?php include_once "navegacao.php" ?>
 
     <!-- Header -->
     <header>
         <div class="container">
-            <img class="img-fluid" src="img/portfolio/profile.png" alt="">
+        <section id="inicio">
+            <!--img class="img-fluid" src="img/portfolio/profile.png" alt=""-->
             <div class="intro-text">
                 <span class="name">Adapt</span>
-                <hr>
                 <span class="name">Internet para Todos!</span>
             </div>
         </div>
     </header>
-
+    </section>
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
@@ -405,7 +404,7 @@
     </div>
 
    
-
+</div>
 </body>
 
 </html>
