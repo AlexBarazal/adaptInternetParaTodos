@@ -19,12 +19,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link id="eCss" href="css/freelancer.min_.css" rel="stylesheet">
+    <link id="eCss" href="css/freelancer.min.css" rel="stylesheet">
     <!-- Está linha cima deve ser alterada, para alterar o css com auto contsrate
     O nome do arquivo com css de auto contrsate e 'freelancer.minConstraste.ccs'
     que está na pasta css 
     O arquivo que esta o botão para configurar está no arquivo acessibilidade. php-->
-    
+
 
 
     <style>
