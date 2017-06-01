@@ -1,6 +1,7 @@
     <?php session_start ();
+        
         $nivel_acesso = $_SESSION['userNivel'];
-    
+        
     ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,6 +47,7 @@
                 document.getElementById("conteudo").style.fontSize=tamanhotexto+'px';
             }
             function fonte(e){
+                
                 var elemento =document.getElementById("conteudo");
                 var atual=elemento.style.fontSize;
                 if(e == 'a'){
@@ -58,6 +60,15 @@
                     elemento.style.fontSize=atual;
 
             }
+
+            function cContraste(){
+                 document.getElementById("eCss").setAttribute("href", "css/freelancer.minContraste.css");
+                }
+
+            function sContraste(){
+                document.getElementById("eCss").setAttribute("href", "css/freelancer.min.css");
+            }
+            
     </script>
 
          

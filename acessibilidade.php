@@ -4,8 +4,8 @@
 				|<input type="button" value="A+" onclick="fonte('a');"  alt="Aumentar Fonte"/>
 				|<input type="button" value="a-" onclick="fonte('b');"  alt="Aumentar Fonte"/>
 				|<input type="button" value="Original" onclick="fonte('c');"  alt="Tamnho original"/>
-				|<input type="button" onclick="cConstraste()" value="Auto Contraste"/>
-				|<input type="button" onclick="sConstraste()" value="Original"/>
+				|<input type="button" onclick="cContraste()" value="Auto Contraste"/>
+				|<input type="button" onclick="sContraste()" value="Original"/>
 
 			</div>
 
