@@ -36,7 +36,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/escutaOlhos.png" class="img-fluid" alt="">
+                        <img src="img/portfolio/escutaOlhos.png" class="img-fluid" alt="Imagem: Quando se escuta com os olhos. Documentário produzido pela Divisão de Audiologia do Instituto Nacional de Educação de Surdos - INES sobre a Surdez e seu Diagnóstico. Assista o video. Cliente: Ana Rocha">
                         <!--https://www.youtube.com/watch?v=DswRVj5Qa9E-->
                     </a>
                 </div>
@@ -47,7 +47,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/facaDiferenca.png" class="img-fluid" alt="">
+                        <img src="img/portfolio/facaDiferenca.png" class="img-fluid" alt="Saiba quais os desafios da inclusão dos surdos no mercado de trabalho? Acompanha a rotina de colegas que trabalham na Assembleia Legislativa e são surdos. Saiba como é o teste da orelinha, Fácil, rápido e sem dor. O exame é obrigatório e gratuito. Todos os bebes recém-nascidos antes de receberem a alta hospitalar devem fazer o teste. Assista o video. Cliente: Faça a Diferença. Date: Março 2017. Serviço: Adição de interprete de libras">
                         <!--https://www.youtube.com/watch?v=J3YFleEq2DY-->
                     </a>
                 </div>
@@ -58,7 +58,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/programaEspecial.png" class="img-fluid" alt="">
+                        <img src="img/portfolio/programaEspecial.png" class="img-fluid" alt="O Programa Especial desta semana é dedicado ao Dia do Surdo, que é comemorado em 26 de setembro. Reportagens especiais vão mostrar exemplos de pessoas que não medem esforços para levar uma vida normal e que têm na família o apoio necessário para viver bem. Esse é o caso da família da tradutora do programa, Jeanie Liza, formada completamente de surdos. Ela conta como se adaptou ao mundo dos ouvintes e como foi ser criada nesse universo de pessoas com deficiência auditiva Assista o video. Cliente: TV Brasil">
                         <!--https://www.youtube.com/watch?v=9IeYntTfM4s-->
                     </a>
                 </div>
@@ -69,7 +69,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/acessoTodos.png" class="img-fluid" alt="">
+                        <img src="img/portfolio/acessoTodos.png" class="img-fluid" alt="Projeto acesso para todos. Cliente Acesso para Todos">
                         <!--http://www.acessoparatodos.com.br/-->
                     </a>
                 </div>
@@ -80,7 +80,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/comAcesso.png" class="img-fluid" alt="">
+                        <img src="img/portfolio/comAcesso.png" class="img-fluid" alt="Site comAcesso. Cliente: comAcesso">
                         <!--http://www.comacesso.pt/-->
                     </a>
                 </div>
@@ -91,7 +91,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/governoEletronico.png" class="img-fluid" alt="">
+                        <img src="img/portfolio/governoEletronico.png" class="img-fluid" alt="Cliente Governo Eletrônico. Este portal está sendo adaptado para o conteúdo da Estratégia do Governança Digital, contribuindo para a promoção do acesso às informações, a melhoria dos serviços públicos digitais e a ampliação da participação social.">
                         <!--https://www.governoeletronico.gov.br/-->
                     </a>
                 </div>
