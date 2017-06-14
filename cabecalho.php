@@ -18,6 +18,7 @@
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="//api.handtalk.me/plugin/latest/handtalk.min.js"></script>
 
     <!-- Theme CSS -->
     <link id="eCss" href="css/freelancer.min.css" rel="stylesheet">
@@ -39,12 +40,12 @@
         }
     }
     </style>
-   <script src="//api.handtalk.me/plugin/latest/handtalk.min.js"></script>
-        <script>
+   <script>
           var ht = new HT({
             token: "ec833255dce7989d6cd9d2916645b96b"
           });
-        </script>
+    </script>
+        
     <script language="javascript">
             var tamanhotexto = new Number();
             var tamanhotexto = 14;
