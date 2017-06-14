@@ -3,6 +3,11 @@
 
 <head>
     <?php include_once "cabecalho.php" ?>
+    <script>
+          var ht = new HT({
+            token: "ec833255dce7989d6cd9d2916645b96b"
+          });
+        </script>
 </head>
 <body onload="tamanhooriginal()"  id="page-top" class="index">
 
